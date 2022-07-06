@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建系统时间
+        var date = new Date();
+        // 创建自己设定的时间
+        var date = new Date("01/02/2020 10:20:20");
+        console.log(date);
+        // 获取月-1
+        console.log(date.getMonth());
+        // 获取日
+        console.log(date.getDate());
+        // 获取周几
+        console.log(date.getDay());
+        // 获取年
+        console.log(date.getFullYear());
+        // 获取时间戳，从1970年1月1日0：0到现在
+        console.log(date.getTime());
+        // 计算代码操作时间
+        var start = Date.now();
+        var end = Date.now();
+        console.log(start - end);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

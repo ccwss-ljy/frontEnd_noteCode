@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Symbol为ES6新定义的数据类型，独一无二
+        // 这样定义a和b不等
+        let a = Symbol("尚硅谷");
+        let b = Symbol("尚硅谷");
+        console.log(a === b);
+        // 这样定义a和b相等
+        let c = Symbol.for("123");
+        let d = Symbol.for("123");
+        console.log(c === d);
+        // 向对象中添加Symbol
+        let obj = {
+            name: "xioamei",
+            [Symbol("Tom")]: function(){
+                console.log(1);
+            },
+            [Symbol("Jerry")]: 123 
+        };
+        console.log(obj);
+    </script>
+</body>
+</html>

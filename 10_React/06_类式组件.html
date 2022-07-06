@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script type="text/babel">
+        class MyComponent extends React.Component{
+            render(){
+                return <h1>这是类式组件</h1>
+            }
+            // this指向MyComponent组件的实例对象
+        }
+        ReactDOM.render(<MyComponent/>, document.getElementById("result"));
+        /* 
+            组件：
+                它在分析过程中发现是类式组件，于是在react内部创建实例对象。
+                并通过实例调用原型上的render方法
+        */
+    </script>
+</body>
+</html>

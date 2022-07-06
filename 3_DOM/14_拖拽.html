@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position:absolute;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            position:absolute;
+            left:200px;
+            top: 200px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementsByClassName("box1")[0];
+            var box2 = document.getElementsByClassName("box2")[0];
+            // 将拖拽封装成函数
+            function drug(obj){
+                // 在obj按下鼠标启动响应事件
+                obj.onmousedown = function(event){
+                    var oL = window.event.clientX - obj.offsetLeft;
+                    var oT = window.event.clientY - obj.offsetTop;
+                    // 跟随鼠标响应事件
+                    document.onmousemove = function(event){
+                        var left = window.event.clientX;
+                        var top = window.event.clientY;
+                        obj.style.left = left - oL + "px";
+                        obj.style.top = top - oT + "px";
+                    }
+                    
+                    // 鼠标松开时启动响应事件，鼠标跟随事件结束，自身响应事件结束，如果不选择document为事件对象的话，鼠标在其他元素身上会导致无法结束
+                    document.onmouseup = function(){
+                        document.onmousemove = null;
+                        document.onmouseup = null;
+                    }
+                    // 因为在有文字情况下，拖拽会使用搜索功能，所以可能导致obj的拖拽出现问题，所以在返回时使用return false，取消obj默认的拖拽搜索功能
+                    return false;   
+                }
+                    
+            }
+            // 调用拖拽函数
+            drug(box1);
+            drug(box2);
+        }
+    </script>
+</head>
+<body>
+    132
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

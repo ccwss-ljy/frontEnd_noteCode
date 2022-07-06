@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES5构造函数
+        function shouji(brand, price){
+            this.brand = brand;
+            this.price = price;
+            
+        }
+        // 添加方法
+        shouji.prototype.call = function(){
+            console.log(1);
+        }
+        let nokia = new shouji("nokia",2999);
+        console.log(nokia.brand);
+        nokia.call();
+
+        // ES6构造函数
+        class Phone{
+            constructor(brand, price){
+                // this.xxx可以随便起，这是在class里和之后调用的属性名，但最好起和形参一样的名。
+                this.brand = brand;
+                this.price = price;
+            }
+            call(){
+                console.log(1);
+            }
+        }
+        let oneplus = new Phone("1+", 1999);
+        console.log(oneplus.brand);
+        oneplus.call();
+    </script>
+</body>
+</html>

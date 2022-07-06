@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            
+            /* outline和border类似，但是不占地方 */
+            /* outline: 10px red solid; */
+            /* box-shadow为阴影
+                1、向右偏移量
+                2、向下偏移量
+                3、模糊程度
+                4、颜色            
+             */
+            box-shadow: 10px 10px 20px black;
+
+            /* border-radius为圆角，为左上右上右下左下 */
+            border-radius: 30px;
+            /* 写两个为椭圆 */
+            /* border-top-left-radius: 40px 50px; */
+            /* 加分号为全部椭圆 */
+            /* border-radius: 30px / 70px; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+
+    </div>
+</body>
+</html>

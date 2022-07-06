@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // BOM控制浏览器对象
+        // chrome: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36
+        // msedge: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.102 Safari/537.36 Edge/18.19041
+        var ua = navigator.userAgent;
+        if(/chrome/i.test(ua) && /Edge/i.test(ua)){
+            alert("我是IE11");
+        }
+        else if(/chrome/i.test(ua)){
+            alert("我是Chrome");
+        }
+        // IE特有属性，但是edge已经删除该属性
+        alert(ActiveXObject);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

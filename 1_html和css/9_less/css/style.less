@@ -1,0 +1,55 @@
+@a:red;
+@b:200px;
+@b:300px;
+// 出现相同变量名，使用后面的。并且遵循局部变量、全局变量的规则
+body{
+    width: @b;
+    .outer1{
+        @b:50px;
+        width: @b;
+        background-color:@a;
+    }
+    .outer2{
+        width: @b;
+        // $+属性名,和该属性值相同
+        height: $width;
+    }
+    // &:相当于父元素
+    &:hover{
+        width: 300px;
+    }
+}
+
+@c:box1;
+// 用变量类名必须是@{变量名}
+.@{c} {
+    width: 100px;
+}
+
+.p1{
+    width: 100px;
+    height: 100px;
+}
+// 类B:extend(类A)，类B在自己原有的基础上，获得了类A的性质
+.p2:extend(.p1){
+    color: red;
+}
+
+//获得了p1的性质
+.p3{
+    .p1();
+}
+
+// 工具人，不显示，但是其他都能用，相当于函数
+.p4(){
+    width: 100px;
+    height: 100px;
+}
+.p4(@w, @h, @bgc){
+    width: @w;
+    height: @h;
+    background-color:@bgc;
+}
+.p5{
+    .p4(100px, 100px, red);
+}

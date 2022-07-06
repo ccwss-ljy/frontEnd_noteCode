@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var generateParenthesis = function (n) {
+            let res = [];
+            function dfs(left, right, path) {
+                if (right === 0) {
+                    res.push(path);
+                    return
+                }
+                if (left === 0) {
+                    // 让右括号进去
+                    path += ')'
+                    dfs(left, right - 1, path)
+                    path -= ')';
+                }
+                else if (right > left) {
+                    // 让右括号进去
+                    path += ')'
+                    dfs(left, right - 1, path)
+                    path -= ')';
+                    // 让左括号进去
+                    path += '('
+                    dfs(left - 1, right, path)
+                    path -= '(';
+                }
+                else if (right === left) {
+                    // 让左括号进去
+                    path += '('
+                    dfs(left - 1, right, path)
+                    path -= '(';
+                }
+            }
+            dfs(n, n, '');
+            return res
+        };
+        // generateParenthesis(3)
+        let a = '((()))'
+        a = a.slice(0, -1)
+        console.log(a)
+    </script>
+</body>
+
+</html>

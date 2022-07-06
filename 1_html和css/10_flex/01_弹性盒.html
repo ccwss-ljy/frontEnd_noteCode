@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style:none;
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            width: 300px;
+            border:red solid 1px;
+            font-size:50px;
+            line-height: 100px;
+            text-align: center;
+            /* 改为弹性容器 
+                -它的子元素为弹性元素，后代不是
+            */
+            display: flex;
+            /* 
+                弹性盒子的属性：
+                    flex-direction：
+                        -column 主轴从上向下
+                        -column-reverse 主轴从下向上
+                        -row 主轴从左向右
+                        -row-reverse 主轴从右向左
+                        侧轴为主轴的垂直方向
+             */
+            flex-direction:row;
+            
+        }
+        li{
+            width: 200px;
+            height: 100px;
+            /* 
+                弹性元素的属性：
+                    flex-grow：
+                        -根据系数比例填充弹性盒子空余位置
+                        -如果系数相同按等比例填充
+                    flex-shrink:
+                        -当弹性盒子空间不足时，按照系数比例收缩
+                        -如果系数相同按等比例收缩
+             */
+            /* flex-grow: 1; */
+            flex-shrink: 1;
+        }
+        li:nth-child(1){
+            background-color:red;
+            /* flex-grow: 1; */
+            flex-shrink: 1;
+        }
+        li:nth-child(2){
+            background-color: blue;
+            /* flex-grow: 2; */
+            flex-shrink:2;
+        }
+        li:nth-child(3){
+            background-color:green;
+            /* flex-grow: 3; */
+            flex-shrink:3;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+</body>
+</html>

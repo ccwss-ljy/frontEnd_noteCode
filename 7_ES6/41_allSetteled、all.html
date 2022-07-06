@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let p1 = new Promise((resolve, reject) =>{
+            resolve("成功");
+            // reject("失败");
+        });
+        let p2 = new Promise((resolve, reject) =>{
+            resolve("成功2");
+            // reject("失败2");
+        });
+        // 将Promise的返回值封装成数组
+        console.log(Promise.allSettled([p1, p2]));
+        // Promise.all只要有一个失败，就返回第一个失败值。如果都为成功，返回所有成功值。
+        console.log(Promise.all([p1, p2]));
+    </script>
+</body>
+</html>

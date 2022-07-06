@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          *{
+             font-size: 60px;
+         }
+         body{
+             height: 2000px;
+         }
+         /* 
+            1、层级默认为后面的层级大于前面的层级
+            2、可以通过z-index改变层级
+            3、祖先元素层级永远比后代元素层级低
+          */
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+            z-index: 2;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

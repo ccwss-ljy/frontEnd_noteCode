@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a213{
+            width: 1000px;
+            height: 100px;
+            border:10px red solid;
+            font-size: 70px;
+            text-align: justify;
+            /* 
+                text-align:
+                    1、center居中对齐
+                    2、left左侧对齐
+                    3、right右侧对齐
+                    4、justify 两端对齐
+             */
+        }
+        span{
+            font-size: 30px;
+            vertical-align: top;
+            /* 
+                vertical-align:
+                    1、top上端对齐
+                    2、bottom下端对齐
+                    3、middle居中对齐
+                    4、baseline基线对齐（默认）
+             */
+        }
+        .outer{
+            border: 1px red solid;
+        }
+        img{
+            vertical-align: bottom;
+            /* 可以去除图片和边线之间的空隙 */
+        }
+    </style>
+</head>
+<body>
+    <div class="a213">
+        今天天气<span>真不错</span>！
+        
+    </div>
+    <div class="outer">
+        <img src="/exercise/05/1.jpg.webp" alt="">
+    </div>
+</body>
+</html>

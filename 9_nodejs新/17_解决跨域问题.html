@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <button id="btn1">GET</button>
+    <button class="btn2">POST</button>
+    <script>
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementsByClassName('btn2')[0];
+        btn1.onclick = function(){
+            // axios.get('url'{,config})
+            axios.get('http://127.0.0.1/get',{
+                params:{
+                    ID:12345
+                }
+            })
+            .then(function(response){
+                console.log(response);
+            })
+        }
+        btn2.onclick = function(){
+            // axios.post('url',{data,{config}})
+            axios.post('http://127.0.0.1/post',{
+                bookname:'水浒传',
+                cost:'12'
+            })
+            .then(function(response){
+                console.log(response);
+            })
+        }
+    </script>
+</body>
+</html>

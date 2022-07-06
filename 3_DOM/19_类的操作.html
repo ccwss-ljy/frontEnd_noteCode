@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color:red;
+        }
+        .box2{
+            /* width: 200px; */
+            height: 200px;
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementsByClassName("box1")[0];
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            btn1.onclick = function(){
+                // 直接改变类名，比改三个属性容易许多
+                // box1.className = "box2";
+                // 添加类名
+                addClassName(box1, "box2");
+            }
+            btn2.onclick = function(){
+                removeClassName(box1, "box2");
+            }
+            // 添加类名函数,但是要判断是否存在，防止反复添加
+            function addClassName(obj, cn){
+                if(!hasClassName(obj, cn)){
+                    obj.className += " " + cn;
+                }       
+            }
+            // 判断类中是否有该函数，使用正则的\b，保证是单一的单词
+            function hasClassName(obj, cn){
+                var reg = new RegExp("\\b" + cn + "\\b","");
+                return reg.test(obj.className);
+            }
+            // 删除类名函数，如果存在，就删除
+            function removeClassName(obj, cn){
+                var reg = new RegExp("\\b" + cn + "\\b","");
+                console.log(1);
+                console.log(reg);
+                console.log(obj.className);
+                obj.className = obj.className.replace(reg, "");
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+    <button id="btn1">点我</button>
+    <button id="btn2">点我删除</button>
+</body>
+</html>

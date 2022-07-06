@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">GET</button>
+    <button id="btn2">POST</button>
+    <button id="btn3">jQuery发送AJAX请求</button>
+    <script src="./js/jQ.js"></script>
+    <script>
+        $("#btn1").click(function(){
+            // jQuery发送AJAX请求
+            // 参数：url，请求参数，回调函数（参数：为响应数据），数据格式
+            $.get("http://127.0.0.1:8000/jQuery-server", {a:100, b:200},function(data){
+                console.log(data);
+            }, "json");
+        });
+        $("button").eq(1).click(function(){
+            $.post("http://127.0.0.1:8000/jQuery-server", {a:100, b:200},function(data){
+                console.log(data);
+            });
+        });
+        $("button").eq(2).click(function(){
+            $.ajax({
+                // url
+                url: "http://127.0.0.1:8000/jQuery-server",
+                // 请求参数
+                data:{
+                    a: 100,
+                    b: 200
+                },
+                // 请求报文形式
+                type: "GET",
+                // 数据格式
+                dataType: "json",
+                // 响应成功对应的函数
+                success:function(data){
+                    console.log(data);
+                },
+                timeout: 2000,
+                // 响应失败对应函数
+                error: function(){
+                    console.log("出错了");
+                } 
+            });
+        });
+    </script>
+</body>
+</html>

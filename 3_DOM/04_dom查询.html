@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Untitled Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/css.css" />
+    <script type="text/javascript">
+        window.onload = function(){
+            // 通过id获取对象
+            var btn1 = document.getElementById("btn01");
+            btn1.onclick = function(){
+                //查找#bj节点
+                var bj = document.getElementById("bj");
+                alert(bj.innerHTML);
+            }
+            // 通过标签名获取一组对象
+            var btn2 = document.getElementById("btn02");
+            btn2.onclick = function(){
+                //查找所有li节点
+                var list = document.getElementsByTagName("li");              
+                for(var i = 0;i < list.length;i++){
+                    alert(list[i].innerHTML);
+                }
+            }
+            // 通过name属性获取一组对象
+            var btn3 = document.getElementById("btn03");
+            btn3.onclick = function(){
+                 //查找name=gender的所有节点
+                var gender = document.getElementsByName("gender");
+                for(var i = 0;i < gender.length;i++){
+                    // 通过这种模式，可以提取该name属性对应对象的其他属性。但是注意class因为为js内有属性，所以需要改为className。
+                    // 因为input为自结束标签，所有不可以用innerHTML
+                    alert(gender[i].name);
+                }
+            }
+            var btn4 = document.getElementById("btn04");
+            btn4.onclick = function(){
+                //查找#city下所有li节点
+                var city = document.getElementById("city");
+                var li = city.getElementsByTagName("li");
+                for(var i = 0;i < li.length;i++){
+                   alert(li[i].innerHTML);
+                }
+            }
+            console.log(city);
+            var btn5 = document.getElementById("btn05");
+            btn5.onclick = function(){
+                //返回#city的所有子节点
+                // childNodes,会把空格也返回
+                console.log(city);
+                var city_child = city.children;
+                for(var i = 0;i < city_child.length;i++){
+                    alert(city_child[i]);
+                }
+            }
+            var btn6 = document.getElementById("btn06");
+            btn6.onclick = function(){
+                //返回#phone的第一个子节点
+                var phone = document.getElementById("phone");
+                // 返回第一个子节点包括空白
+                var pf = phone.firstChild;
+                console.log(pf);
+            }
+            var btn7 = document.getElementById("btn07");
+            btn7.onclick = function(){
+                var bj = document.getElementById("bj");
+                var bj_f = bj.parentNode;
+                //返回#bj的父节点
+                alert(bj_f.innerHTML);
+                // innerText不会返回HTML标签，只返回标签内部内容
+                alert(bj_f.innerText);
+            }
+            var btn8 = document.getElementById("btn08");
+            btn8.onclick = function(){
+                var android = document.getElementById("android");
+                //返回#android的前一个兄弟节点,包括空格
+                // var bro = android.previousSibling;
+                // alert(bro.innerHTML);
+                // 只返回元素节点
+                var bro = android.previousElementSibling;
+                alert(bro.innerHTML);
+            }
+            
+            
+            //读取#username的value属性值
+            //设置#username的value属性值
+            //返回#bj的文本值
+        }
+        
+    </script>
+</head>
+
+<body>
+    <div id="total">
+        <div class="inner">
+            <p>
+                你喜欢哪个城市?
+            </p>
+
+            <ul id="city">
+                <li id="bj">北京</li>
+                <li>上海</li>
+                <li>东京</li>
+                <li>首尔</li>
+            </ul>
+
+            <br>
+            <br>
+
+            <p>
+                你喜欢哪款单机游戏?
+            </p>
+
+            <ul id="game">
+                <li id="rl">红警</li>
+                <li>实况</li>
+                <li>极品飞车</li>
+                <li>魔兽</li>
+            </ul>
+
+            <br />
+            <br />
+
+            <p>
+                你手机的操作系统是?
+            </p>
+
+            <ul id="phone">
+                <li>IOS</li>
+                <li id="android">Android</li>
+                <li>Windows Phone</li>
+            </ul>
+        </div>
+
+        <div class="inner">
+            gender:
+            <input class="hello" type="radio" name="gender" value="male" />
+            Male
+            <input class="hello" type="radio" name="gender" value="female" />
+            Female
+            <br>
+            <br>
+            name:
+            <input type="text" name="name" id="username" value="abcde" />
+        </div>
+    </div>
+    <div id="btnList">
+        <div><button id="btn01">查找#bj节点</button></div>
+        <div><button id="btn02">查找所有li节点</button></div>
+        <div><button id="btn03">查找name=gender的所有节点</button></div>
+        <div><button id="btn04">查找#city下所有li节点</button></div>
+        <div><button id="btn05">返回#city的所有子节点</button></div>
+        <div><button id="btn06">返回#phone的第一个子节点</button></div>
+        <div><button id="btn07">返回#bj的父节点</button></div>
+        <div><button id="btn08">返回#android的前一个兄弟节点</button></div>
+        <div><button id="btn09">返回#username的value属性值</button></div>
+        <div><button id="btn10">设置#username的value属性值</button></div>
+        <div><button id="btn11">返回#bj的文本值</button></div>
+    </div>
+</body>
+
+</html>

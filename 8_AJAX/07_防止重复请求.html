@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1">点击发送</button>
+    <button id="btn2">点击取消</button>
+    <script>
+        let btns = document.querySelectorAll("button");
+        let XHR;
+        let isSending = false;
+        btns[0].onclick = function(){
+            if(isSending) XHR.abort();
+            XHR = new XMLHttpRequest();
+            XHR.open("GET", "http://127.0.0.1:8000/IE");
+            XHR.send();   
+            isSending = true;
+            XHR.onreadystatechange = function(){
+                if(XHR.readyState === 4){
+                    isSending = false;
+                    if(XHR.status >= 200 && XHR.status < 300){
+                        console.log(XHR.response);
+                    }
+                }
+            }
+        }
+        btns[1].onclick = function(){
+            XHR.abort();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script type="text/babel">
+        class Weather extends React.Component{
+            // 这里接props，目的是为了在构造器中使用this.props
+            constructor(props){
+                // constructor中的this都为实例对象
+                super(props);
+                this.state = {isHot: false};
+                // 创建一个新的函数，将原型对象中的changeWeather函数赋值给实例对象的属性中，其中这个新的函数中的this为实例对象
+                this.changeWeather = this.changeWeather.bind(this);
+            }
+            // class中创建的方法都存在了prototype（原型对象）中，供给实例使用
+            render(){
+
+                const {isHot} = this.state;
+                // 这里必须为this.changeWeather,如果光写changeWeather的话为undefined，因为changeWeather必须为实例调用
+                // 如果不加上面新创造的函数，那这里的this.changeWeather就为原型对象中的方法，传给onClick，onClick调用时就为直接调用
+                return <h1 onClick = {this.changeWeather}>今天天气很{isHot == true ? "炎热" : "凉爽"}</h1>
+            }
+            changeWeather(){
+                console.log(this);
+                const isHot = this.state.isHot;
+                // 不可以直接修改属性，react不认，只能使用setState方法来修改
+                this.setState({isHot: !isHot});
+            }
+        }
+        ReactDOM.render(<Weather/>, document.getElementById("result"));
+        let w1 = new Weather();
+        console.log(w1);
+    </script>
+</body>
+</html>

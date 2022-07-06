@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            /* 
+                background-image
+                    1.linear-gradient(线性渐变)
+                        -可以有多种颜色
+                        -to right（从左到右）
+                        -x deg （按角度走）
+                        -x turn（按圈走）
+                        -xpx可以指定从多少像素开始
+             */
+            /* background-image: linear-gradient( red 100px, blue) */
+
+            /* 
+                2.repeating-linear-gradient:
+                    -根据像素差值决定重复个数
+             */
+            background-image: repeating-linear-gradient(red 0px, blue 60px)
+
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

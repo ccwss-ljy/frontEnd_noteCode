@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let m = new Map();
+        // 添加元素
+        m.set("name","xiaomei");
+        m.set("change",function(){
+            console.log(`123`);
+        });
+        let key = {
+            school: `shangguigu`
+        };
+        m.set(key, ["大娃","二娃","三娃"]);
+        console.log(m);
+        // 返回数组长度
+        console.log(m.size);
+        // 因为含有iterator对象，所以可以用for...of
+        for(let v of m){
+            console.log(v);
+        }
+        // 获取
+        console.log(m.get(`name`));
+        console.log(m.get(key));
+        // 删除
+        m.delete('name');
+        console.log(m.size);
+        // 清空
+        m.clear();
+        console.log(m.size);
+    </script>
+</body>
+</html>

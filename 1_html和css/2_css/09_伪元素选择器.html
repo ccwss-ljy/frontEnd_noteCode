@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p::first-letter{
+            font-size: 30px;
+        }
+        /* p::first-line{
+            background-color: red;
+        } */
+        p{
+            font-size:20px;
+        }
+        p::selection{
+            color: yellow;
+        }
+        p::before{
+            content:'123';
+            background-color: green;
+        }
+        p::after{
+            content: '456';
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas ipsam culpa voluptatibus cumque incidunt rerum accusantium dolorum necessitatibus aliquid autem dolor, vel atque numquam facilis corrupti soluta earum laudantium eum.</p>
+</body>
+</html>

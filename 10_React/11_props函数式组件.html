@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script src="./js/prop-types.js"></script>
+    <script type="text/babel">
+        // 函数式组件只能用props，state和rels用不了。
+        // 如果要定义默认属性，只能用props的复杂方式在Person外侧定义
+        function Person(props){
+            const {name, age, sex} = props;
+            return (
+                <ul>
+                    <li>姓名：{name}</li>
+                    <li>年龄：{age}</li>
+                    <li>性别：{sex}</li>
+                </ul>
+            )
+        }
+        const p = {
+            name: "xiao",
+            age: 18,
+            sex: "男"
+        }
+        ReactDOM.render(<Person {...p}/>, document.getElementById("result"));
+    </script>
+</body>
+</html>

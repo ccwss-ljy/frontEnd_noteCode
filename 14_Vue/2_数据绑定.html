@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <!-- 
+            数据单向绑定：v-bind（展示data中数据，可以使用任意节点属性）
+            数据双向绑定：v-model（展示和修改data中数据，只可以使用value属性）
+         -->
+         <!-- 标准写法 -->
+        <input type="text" v-bind:value="name"/>
+        <input type="text" v-model:value="name"/>
+        <!-- 简单写法 -->
+        <input type="text" :value="name"/>
+        <input type="text" v-model="name"/>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#root',
+            data:{
+                name:'嘿嘿嘿'
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color:#bfa;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            // 通过js改变css样式
+            var btn01 = document.getElementById("btn01");
+            var box1 = document.getElementsByClassName("box1")[0];
+            btn01.onclick = function(){
+                // alert("123");
+                // 对象.style.样式 = "";
+                // background-color这种的改为驼峰命名法
+                box1.style.width = "300px";
+                box1.style.height = "300px";
+                box1.style.backgroundColor = "yellow";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+    <button id = "btn01">点我</button>
+</body>
+</html>

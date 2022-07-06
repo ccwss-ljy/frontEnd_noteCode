@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var btn01 = document.getElementById("btn01");
+            var ul = document.getElementById("ul");
+            var a = document.getElementsByTagName("a");
+            // 事件的委派：祖先设定的函数，子代也会继承，但是需要让指定的子代来响应
+            // 作用：即使有新添加的子代也可以拥有该响应事件
+            btn01.onclick = function(){
+                var li = document.createElement("li");
+                li.innerHTML = "<a href = 'javascript:;' class='link'>123</a>";
+                ul.appendChild(li);               
+            }
+            ul.onclick = function(event){
+                // window.event.target返回当前点击的后代
+                // 然后判断是否为对应的后代，是的话响应
+                if(window.event.target.className == 'link'){
+                    alert("123");
+                }
+
+            }
+            // for(var i = 0;i < a.length;i++){
+            //     a[i].onclick = function(){
+            //         alert("123");
+            //     }
+            // }
+        }
+    </script>
+</head>
+<body>
+    <button id = 'btn01'>添加链接</button>
+    <ul id='ul'>
+        <li>
+            <a href = 'javascript:;' class="link">123</a>
+        </li>
+        <li>
+            <a href = 'javascript:;' class="link">123</a>
+        </li>
+        <li>
+            <a href = 'javascript:;' class="link">123</a>
+        </li>     
+    </ul>
+    
+</body>
+</html>

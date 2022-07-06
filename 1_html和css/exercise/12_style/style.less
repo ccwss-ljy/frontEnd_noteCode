@@ -1,0 +1,140 @@
+.clearfix::before,.clearfix::after{
+    content: '';
+    display: table;
+    clear:both;
+}
+
+html{
+    font-size: 0.133333vmin;
+    background-color: rgb(250, 245, 245);
+}
+.size(){
+    width: 690rem;
+    margin: 30rem 30rem;
+}
+.underline(){
+    text-decoration:none;
+}
+.wrap_outer{
+    width: 100vw;
+    
+}
+.top{
+    .size();
+    display: flex;
+    justify-content: space-between; 
+    font-size: 50rem;
+
+    a{
+        color:#999;
+        .underline();
+    }
+}
+
+
+.big{
+    .size();
+    border-radius: 30rem;
+    overflow:hidden;
+    img{
+        width: 100%;
+    }
+}
+.nav{
+    .size();
+    ul{
+        display:flex;
+        width: 100%;
+        // border:1px red solid;
+        height: 300rem;
+        flex-flow:row wrap;
+        justify-content:space-between;
+        align-content: space-around;
+        li{
+            flex:0 0 320rem;
+            height: 100rem;
+            text-align: center;
+            line-height: 100rem;
+            border-radius:10px;
+            a{
+                span{
+                    margin-left:20rem;
+                }
+                .underline();
+                font-size:16px;
+                font-family: '微软雅黑';
+                display: block;
+                color: white;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .mc{
+            background-color: #f97053;
+        }
+        .st{
+            background-color: #cd6efe;
+        }
+        .ss{
+            background-color: #f97053;
+        }
+        .md{
+            background-color: #1bc4fb;
+        }
+    }
+}
+.latest{
+    .size();
+    display: flex;
+    justify-content: space-between;
+    h2{
+        font-size: 18px;
+        span{
+            color:#1bc4fb;
+            font-weight: bolder;
+        } 
+    }
+    a{
+        .underline();
+        color:#999;
+        font: 14px "微软雅黑";
+    }
+}
+.latest_img{
+    .size();
+    width: 720rem;
+    display:flex;
+    overflow:auto;
+    div{
+        flex-shrink: 0;
+        width: 330rem;
+        height: 400rem;
+        border-radius: 10px;
+        background-color: white;
+        display:flex;
+        flex-flow:column;
+        justify-content: space-around;
+        align-items: center;
+        padding: 0 30rem;
+        box-sizing:border-box;
+        margin-right: 30rem;
+        box-shadow:0 0 5px rgb(0, 0 , 0, 0.3);
+        img{
+            width: 80%;
+        }
+        span{
+            font: 13px "微软雅黑";
+        }
+        a{
+            .underline();
+            color:#999;
+            span{
+                font-size:12px;
+            }
+            align-self:flex-start;
+        }
+        .icon{
+            width: 30rem;
+        }
+    }
+}

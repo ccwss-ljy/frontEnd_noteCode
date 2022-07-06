@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 生成器函数
+        // function * gen(){
+        //     console.log(2);
+        //     yield console.log(1);
+        // }
+        // // 只能用next才能调用,调用内容可以放到yield也可以放到yield上部
+        // gen().next();
+
+        function * fn(arg){
+            console.log(arg);
+            console.log(1);
+            let one = yield 111;
+
+            console.log(one);
+            console.log(2);
+            let two = yield 222;
+
+            console.log(two);
+            console.log(3);
+            yield 333;
+        }
+        // yield相当于}，可以将上部的内容构成一个代码块，将一个函数分成几块。
+        let item = fn("132");
+        console.log(item.next());
+        // 下一个next里面传入实参的话，相当于给上一个yield赋值
+        console.log(item.next("AAA"));
+        console.log(item.next("bbb"));
+
+
+
+
+
+        // function * fun(){
+        //     console.log(111)
+        //     let haha = yield 0;
+
+        //     console.log(haha);
+        //     console.log(222);
+        //     yield;
+        // }
+
+        // let a = fun();
+        // a.next();
+        // a.next(123);
+    </script>
+</body>
+</html>

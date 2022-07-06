@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script src="./js/prop-types.js"></script>
+    <script type="text/babel">
+        class Demo extends React.Component{  
+            // 创建一个ref容器，但是只能存一个标签
+            myRef = React.createRef();
+            show = ()=>{
+                console.log(this.myRef.current.value);
+            }   
+            render(){
+                
+                return(
+                    <div>
+                        <input ref={this.myRef} type="text"/>
+                        <button onClick={this.show}>点击</button>    
+                    </div>
+                )
+            }
+            
+        }
+        // 如果操作和显示是同一个事件，可以不使用ref，而使用event.target
+        ReactDOM.render(<Demo/>, document.getElementById("result"));
+    </script>
+</body>
+</html>

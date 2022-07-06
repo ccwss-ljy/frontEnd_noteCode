@@ -1,0 +1,42 @@
+<!-- 
+    BFC（块级格式化环境）：开启BFC相当于页面中有一个独立的环境，类似又有了一个小页面。
+    开启BFC的方式：
+        1.设置元素浮动（缺点：脱离文档流，宽度之类的就都没了页面布局就乱了）
+        2.设置display为行内块元素（不推荐）
+        3.设置overflow为hidden
+    开启BFC以后就不会被浮动所覆盖
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            border: 10px solid red;
+            float: left;
+            width: 600px;
+        }
+
+        .box2 {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            /* float: left; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box2"></div>
+    </div>
+    
+</body>
+
+</html>

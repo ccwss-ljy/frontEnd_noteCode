@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var box1 = document.getElementsByClassName("box1")[0];
+            var dir = 0;
+            var timer = setInterval(function () {
+                // 38 40 37 39
+                // alert(window.event.keyCode);
+                var left = box1.offsetLeft;
+                var top = box1.offsetTop;
+                switch (dir) {
+                    case 38:
+                        box1.style.top = top - 10 + "px";
+                        break;
+                    case 40:
+                        box1.style.top = top + 10 + "px";
+                        break;
+                    case 37:
+                        box1.style.left = left - 10 + "px";
+                        break;
+                    case 39:
+                        box1.style.left = left + 10 + "px";
+                }
+            }, 100);
+            document.onkeydown = function (event) {
+                dir = window.event.keyCode;
+            }
+            document.onkeyup = function () {
+                dir = 0;
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box1"></div>
+</body>
+
+</html>

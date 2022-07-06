@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            font-size:40px;
+        }
+        .box1{
+            background-color: #bfa;
+            float: left;
+        }
+        .box2{
+            background-color: yellow;
+            float: right;
+        }
+        .box3{
+            background-color: red;
+            clear: both;
+            /* 
+                clear:
+                1.left,不受左浮动影响
+                2.right，不受右浮动影响
+                3.both，不受左右中最大浮动影响
+             */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>

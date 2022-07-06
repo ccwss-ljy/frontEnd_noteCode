@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var btn1 = document.getElementById("btn1");
+            // 事件的绑定函数：正常响应事件不可以重复，除非使用绑定函数
+            // addEventListener("不加on的响应事件"，响应函数，false)
+            // 最后一个参数为是否在捕获阶段进行。
+            // 捕获为冒泡的相反，就是遇到相同事件先从祖先开始再到后代。
+            btn1.addEventListener("click",function(){
+                alert(1);
+            },false);
+            btn1.addEventListener("click",function(){
+                alert(2);
+            },false)
+            btn1.addEventListener("click",function(){
+                alert(3);
+            },false);
+        }
+        
+        
+    </script>
+</head>
+<body>
+    <button id = "btn1">23</button>
+</body>
+</html>

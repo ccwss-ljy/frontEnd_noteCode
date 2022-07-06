@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick = function(){
+                var username = document.getElementById("username");
+                alert(username.value);
+            }
+        }
+    </script>
+    <script src="./js/jQ.js"></script>
+    <script>
+        $(function(){
+            $("#btn2").click(function(){
+                var $username = $("#username");
+                alert($username.val());
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="text" id ="username">输入用户名
+    <button id="btn1">获取用户名（原始）</button>
+    <button id="btn2">获取用户名（js）</button>
+</body>
+</html>

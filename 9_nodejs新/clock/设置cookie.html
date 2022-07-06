@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+                // function setCookie(name, value, iDay) {
+        //     var oDate = new Date();
+        //     oDate.setDate(oDate.getDate() + iDay);
+        //     document.cookie = name + "=" + value + ";expires=" + oDate;
+        // }
+        // 设置cookie
+        function setCookie(name, value, time) {
+            console.log(`${name}=${value}; max-age=${time}`);
+            document.cookie = `${name}=${value}; max-age=${time}`
+        }
+        // 读取cookie
+        function getCookie(name) {
+            let arr1 = document.cookie.split(';');
+            for (let i in arr1) {
+                let arr2 = arr1[i].split('=');
+                if (arr2[0] === name) {
+                    return arr2[1]
+                }
+            }
+            return 'esdf'
+        }
+        // 删除cookie
+        function removeCookie(name) {
+            setCookie(name, 0, 0);
+        }
+
+        // setCookie('haha', 'heihei', 8000000)
+        let a = getCookie('haha')
+        // removeCookie('haha')
+        console.log(a)
+    </script>
+</body>
+
+</html>

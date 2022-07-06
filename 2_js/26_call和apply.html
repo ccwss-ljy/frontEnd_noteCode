@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun(a, b){
+            return a + b;
+        }
+        /*
+            这三个都可以调用函数，区别在于：
+                apply和call的第一个参数可以更改this的指向。
+                apply和call的区别：
+                    -apply的实参需要用[]封装
+                    -call的实参直接跟逗号
+        */ 
+       var obj = {
+           name:123
+       }
+        console.log(fun(1, 2));
+        console.log(fun.apply(obj, [1, 2]));
+        console.log(fun.call(obj, 1, 2));
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script type="text/babel">
+        function Mycomponent(){
+            // 使用babel以后就进入了严格模式，所以this不指向window，为undefined
+            return <h1>我是函数式组件</h1>
+        }
+        ReactDOM.render(<Mycomponent/>, document.getElementById("result"));
+        /* 
+            组件：
+                组件第一个字母要大写
+                首先识别组件，发现是函数式组件，然后调用函数式组件
+         */
+    </script>
+</body>
+</html>

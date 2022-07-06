@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 800px;
+            height: 200px;
+            border: 10px blue solid;
+        }
+        .inner{
+            /* width: 200px;
+            height: 200px;
+            margin:0 auto;
+            background-color: gray; */
+            /* width: auto;
+            height: 200px;
+            margin:0 auto;
+            background-color: gray; */
+
+            width:auto;
+            height: 200px;
+            background-color: yellow;
+            margin-left: auto;
+            margin-right: auto;
+
+            /* 
+            水平布局：
+            子元素的（margin-left+border-left+padding-left+width+padding-right+border-right+margin-right）=父元素的content
+
+            没有auto的情况下：margin-right自动调整
+            有auto的情况下：自动调整auto，width的auto优先级最高。
+            比如：width和外边距都为auto，最终也只有width是auto，外边距为0
+
+
+            总结：当子元素总和加起来大小不满足父元素内容区大小时。只能是width和margin为auto
+                没有auto时，margin-right为auto，来调节大小
+                有1个auto时，这个元素调节大小
+                有2个auto时，如果为width和margin的话，margin为0，width为auto.如果为margin的话，margin-left和margin-right对半分
+                有3个auto时，width为auto
+             */
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../html和css/exercise/css/reset.css">
+    <link rel="stylesheet" href="../../html和css/exercise/fa/css/all.css">
+    <link rel="icon" href="./图片/favicon.ico">
+    <title>Document</title>
+    <style>
+        /* 最外面盒子 */
+        .header_outer {
+            width: 100%;
+            background-color: rgb(51, 51, 51);
+        }
+
+        /* 放内容的盒子 */
+        .header_inner {
+            width: 1226px;
+            height: 40px;
+            background-color: rgb(51, 51, 51);
+            line-height: 40px;
+            margin: 0 auto;
+        }
+
+        /* 让ul.left向左浮动 */
+        .left {
+            float: left;
+        }
+
+        /* 让ul.right向右浮动 */
+        .right {
+            float: right;
+        }
+
+        /* 让ul内部所有li向左浮动 */
+        .list {
+            float: left;
+            position: relative;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        /* 文字之间的竖线 */
+        .line {
+            width: 1px;
+            height: 8px;
+            background-color: #424242;
+            margin: 17px 7.2px;
+        }
+
+        /* 二维码样式 */
+        /* .QR_code_menu{
+            width: 110px;
+            height: 130px;
+            box-shadow: 0 0 5px black;
+            position: absolute;
+            top: 40px;
+            left: 530px;
+            display: none;
+        } */
+        /* .QR_code:hover .QR_code_menu{
+            display: block;
+        } */
+        /* 购物车的外部块 */
+        div.right {
+            width: 120px;
+            height: 40px;
+            background-color: rgb(66, 66, 66);
+            margin-left: 20px;
+            text-align: center;
+            /* line-height: 40px; */
+            position: relative;
+        }
+
+        /* 购物车超链接样式 */
+        div.right a {
+            display: block;
+            width: 120px;
+            height: 40px;
+            padding: 15px 0;
+            position: relative;
+            color: rgb(176, 176, 176);
+            font-size: 12px;
+            /* box-sizing: border-box; */
+        }
+
+        /* 购物车下拉框样式 */
+        .shop_menu {
+            width: 300px;
+            height: 100px;
+            background-color: white;
+            box-shadow: 0 0 2px black;
+            position: absolute;
+            top: 40px;
+            left: -180px;
+            display: none;
+        }
+
+        /* 下拉框中字体样式 */
+        p {
+            color: black;
+            text-align: center;
+            line-height: 100px;
+            font-size: 12px;
+        }
+
+        /* 当触发时购物车状态 */
+        div.right:hover a {
+            color: tomato;
+            background-color: white;
+            z-index: 32;
+        }
+
+        div.right:hover .shop_menu {
+            display: block;
+        }
+
+        /* 除购物车超链接样式 */
+        a {
+            text-decoration: none;
+        }
+
+        .list a {
+            color: #b0b0b0;
+            font-size: 12px;
+        }
+
+        /* 除购物车超连接触发样式 */
+        .list a:hover {
+            color: white;
+        }
+
+        /* main的顶部导航栏 */
+        .top_outer {
+            width: 100%;
+        }
+
+        .top {
+            width: 1226px;
+            height: 80px;
+            /* background-color: red; */
+            margin: 0 auto;
+            padding-top: 8px;
+            /* position: relative; */
+
+        }
+
+        /* 小米图标 */
+        .top_left {
+            width: 52px;
+            height: 50px;
+            float: left;
+            padding-top: 8px;
+        }
+
+        .xmicon {
+            width: 52px;
+            height: 50px;
+        }
+
+        /* main导航栏 */
+        .top_ul {
+            float: left;
+            height: 100%;
+            width: 650px;
+            margin-left: 100px;
+            /* line-height: 100%; */
+        }
+
+        .top_list {
+            float: left;
+            font-size: 16px;
+            height: 100%;
+            line-height: 76px;
+            margin: 0 10px;
+        }
+
+        /* main导航栏的超连接 */
+        .top_list a {
+            color: #333;
+            display: block;
+        }
+
+        .top_list a:hover {
+            color: tomato;
+        }
+
+        .top_div {
+            width: 100%;
+            /* height: auto; */
+            /* border: 1px red solid; */
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 120px;
+            background-color: white;
+            box-shadow: 3px 3px 10px black;
+        }
+
+        .xmp:hover .top_div {
+            display: block;
+        }
+
+        /* 右侧搜索框 */
+        .top_right {
+            float: right;
+            width: 400px;
+            height: 100%;
+            padding: 10px 0;
+            box-sizing: border-box;
+        }
+
+        .input_text {
+            width: 245px;
+            height: 50px;
+            float: right;
+            border: 1px rgb(224, 224, 224) solid;
+        }
+
+        /* 搜索图标 */
+        .research {
+            width: 50px;
+            height: 54px;
+            background-color: white;
+            float: right;
+            border: 1px rgb(224, 224, 224) solid;
+            text-align: center;
+            padding-top: 18px;
+            box-sizing: border-box;
+        }
+
+        .research_icon {
+            font-size: 20px;
+        }
+        .middle_outer{
+            width: 100%;
+        }
+        div.middle{
+            width: 1226px;
+            height: 460px;
+            margin: 0 auto;
+        }
+        ul.middle_left{
+            width: 234px;
+            height: 420px;
+            background-color: rgb(105, 101, 101, 0.6);
+            padding: 20px 0;
+            float: left;
+        }
+        li.middle_left{
+            padding-left: 30px;
+            width: 204px;
+            height: 42px;
+            color: #fff;
+        }
+        li.middle_left a{
+            color: white;
+            display: block;
+            width: 204px;
+            height: 42px;
+            box-sizing: border-box;
+            line-height: 42px;
+            font-size:14px;
+        }
+        li.middle_left:hover{
+            background-color: #ff6700;
+        }
+        li.middle_left span{
+            float: right;
+            margin-right: 20px;
+            line-height: 42px;
+            font-size:18px;
+        }
+        div.middle_right{
+            width: 1226px;
+            height: 460px;
+            background-image: url("/exercise/图片/轮播图.webp");
+            /* float: right; */
+        }
+        .bottom{
+            
+            margin:0 auto;
+            margin-top: 14px;
+            width: 1240px;
+        }
+        div.bottom_left{
+            width: 231px;
+            height: 164px;
+            float: left;
+            padding: 3px;
+            background-color: rgb(95, 87, 80)
+        }
+        li.bottom_left{
+            float: left;
+            padding: 0 3px;
+            position: relative;
+        }
+        li.bottom_left::after{
+            content: '';
+            height: 70px;
+            width: 1px;
+            background-color: rgb(102, 94, 87);
+            display: block;
+            float: left;
+            position: absolute;
+            top: 6px;
+            right: 75px;
+            bottom: 6px;
+        }
+        li.bottom_left::before{
+            content: '';
+            height: 1px;
+            width: 70px;
+            background-color: rgb(102, 94, 87);
+            display: block;
+            float: left;
+            position: absolute;
+            top: 6px;
+            right: 75px;
+            bottom: 6px;
+        }
+        li.bottom_left img{
+            width: 24px;
+            height: 24px;
+            margin:0 23px 4px 23px;
+            display: block;
+        }
+        li.bottom_left a{
+            width: 70px;
+            height: 46px;
+            display: block;
+            color: #fff;
+            padding-top: 18px;
+            font-size:12px;
+            /* line-height:46px; */
+            text-align:center;
+        }
+        .bottom_img{
+            float: left;
+            margin-left:18px;
+        }
+        .bottom_img img{
+            width: 316px;
+            height: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header_outer">
+            <div class="header_inner">
+                <ul class="left">
+                    <li class="list">
+                        <a href='javascript:;'>
+                            小米商城
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            MIUI
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            IoT
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            云服务
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            天星科技
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            有品
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            小爱开放平台
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            企业团购
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            资质证照
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            协议规则
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list QR_code">
+                        <a href='javascript:;'>
+                            下载app
+                        </a>
+                        <!-- <li class="QR_code_menu">
+                        </li>  -->
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            智能生活
+                        </a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href='javascript:;'>
+                            Select Location
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="right">
+                    <div class="right_shop">
+                        <a href="javascript:;" class='fas'>&#xf07a 购物车（0）</a>
+                    </div>
+                    <div class="shop_menu">
+                        <p>购物车中还没有商品，赶紧选购吧！</p>
+                    </div>
+                </div>
+                <ul class="right">
+                    <li class="list">
+                        <a href="javascript:;">登录</a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href="javascript:;">注册</a>
+                    </li>
+                    <li class="line list"></li>
+                    <li class="list">
+                        <a href="javascript:;">消息通知</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="top_outer">
+            <div class="top">
+                <div class="top_left">
+                    <img src="/exercise/图片/小米.jpg" class="xmicon" alt="">
+                </div>
+                <ul class="top_ul">
+                    <li class="top_list xmp">
+                        <a href="javascript:;">
+                            小米手机
+                        </a>
+                        <div class="top_div">
+                            <div>
+                                <img src="/exercise/图片/xmphone.webp" alt="">
+                                <div>
+                                    小米11
+                                </div>
+                                <div>
+                                    3999元起
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="top_list  xmp">
+                        <a href="javascript:;">
+                            Redmi 红米
+                        </a>
+                        <div class="top_div">
+                            <img src="/exercise/图片/xmphone.webp" alt="">
+                        </div>
+                    </li>
+                    <li class="top_list  xmp">
+                        <a href="javascript:;">
+                            电视
+                        </a>
+                        <div class="top_div">
+                            <img src="/exercise/图片/xmphone.webp" alt="">
+                        </div>
+                    </li>
+                    <li class="top_list  xmp">
+                        <a href="javascript:;">
+                            笔记本
+                        </a>
+                        <div class="top_div">
+                            <img src="/exercise/图片/xmphone.webp" alt="">
+                        </div>
+                    </li>
+                    <li class="top_list  xmp">
+                        <a href="javascript:;">
+                            家电
+                        </a>
+                        <div class="top_div">
+                            <img src="/exercise/图片/xmphone.webp" alt="">
+                        </div>
+                    </li>
+                    <li class="top_list  xmp">
+                        <a href="javascript:;">
+                            路由器
+                        </a>
+                        <div class="top_div">
+                            <img src="/exercise/图片/xmphone.webp" alt="">
+                        </div>
+                    </li>
+                    <li class="top_list  xmp">
+                        <a href="javascript:;">
+                            智能硬件
+                        </a>
+                        <div class="top_div">
+                            <img src="/exercise/图片/xmphone.webp" alt="">
+                        </div>
+                    </li>
+                    <li class="top_list">
+                        <a href="javascript:;">
+                            服务
+                        </a>
+                    </li>
+                    <li class="top_list">
+                        <a href="javascript:;">
+                            社区
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="top_right">
+                    <div class="research">
+                        <span class="fab research_icon">&#xf3ee</span>
+                    </div>
+                    <input type="text" class="input_text">
+                </div>
+            </div>
+        </div>
+        <div class="middle_outer">
+            <div class="middle">
+                <ul class="middle_left">
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            手机 电话卡
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            电视 盒子
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            笔记本 显示器
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            家电 插线板
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            出行 穿戴
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            智能 路由器
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            电源 配件
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            健康 儿童
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            耳机 音响
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+                    <li class="middle_left">
+                        <a href="javascript:;">
+                            生活 箱包
+                            <span class="middle_left fas">&#xf105</span>
+                        </a>
+                        
+                    </li>
+    
+                </ul>
+    
+                <div class="middle_right">
+                    <!-- <img src="/exercise/图片/轮播图.webp" alt=""> -->
+                </div>
+            </div>         
+        </div>
+        <div class="bottom">
+            <div class="bottom_left">
+                <ul class="bottm_left">
+                    <li class="bottom_left">
+                        <a href="javascript:;">
+                            <img src="/exercise/图片/clock.png" alt="">
+                            <span>小米秒杀</span>     
+                        </a>
+                    </li>
+                    <li class="bottom_left">
+                        
+                        <a href="javascript:;">
+                            <img src="/exercise/图片/clock.png" alt="">
+                            企业团购
+                        </a>
+                    </li>
+                    <li class="bottom_left">
+                        <a href="javascript:;">
+                            <img src="/exercise/图片/clock.png" alt="">
+                            F码通道
+                        </a>
+                    </li>
+                    <li class="bottom_left">
+                        <a href="javascript:;">
+                            <img src="/exercise/图片/clock.png" alt="">
+                            米粉卡
+                        </a>
+                    </li>
+                    <li class="bottom_left">
+                        <a href="javascript:;">
+                            <img src="/exercise/图片/clock.png" alt="">
+                            以旧换新
+                        </a>
+                    </li>
+                    <li class="bottom_left">
+                        <a href="javascript:;">
+                            <img src="/exercise/图片/clock.png" alt="">
+                            话费充值
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom_img">
+                <img src="/exercise/图片/bottom_img.jpg" alt="">
+            </div>
+            <div class="bottom_img">
+                <img src="/exercise/图片/bottom_img.jpg" alt="">
+            </div>
+            <div class="bottom_img">
+                <img src="/exercise/图片/bottom_img.jpg" alt="">
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

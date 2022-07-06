@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: blue;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            margin-left:10px;
+            background-color: #bfa;
+            /* animation-name:该名字需要和关键帧名字对应 */
+            animation-name:test;
+            /* animation-duration：持续时间 */
+            animation-duration:2s;
+            /* animation-iteration-count：进行次数
+                -infinite：无限次
+            */
+            animation-iteration-count:5;
+            animation-delay: 10s;
+            /* animation-direction:动画进行方向
+                -normal 默认
+                -reverse 相反方向
+                -alternate 一次默认方向，一次相反
+                -alternate-reverse 一次相反，一次默认方向
+            */
+            animation-direction:normal;
+            /* 
+                animation-fill-mode:结束位置
+                    -none 动画结束回到初始位置
+                    -forwards 动画结束回到最终位置
+                    -backwards 动画延时等待时位置在初始位置
+                    -both:结合backwards和forwards
+
+            */
+            animation-fill-mode:backwards;
+            /* 
+                animation-play-state:
+                    running：动画播放
+                    paused：动画停止
+            */
+            /* 
+                animation：简写：持续时间在延迟时间前面
+            */
+        }
+        @keyframes test{
+            from{
+                margin-left:0;
+            }
+            to{
+                margin-left:600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

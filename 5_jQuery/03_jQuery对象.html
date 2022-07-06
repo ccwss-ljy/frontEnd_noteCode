@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <button id="btn3">按钮3</button>
+    <button>按钮4</button>
+    <script src="./js/jQ.js"></script>
+    <script>
+        /*
+            jQuery对象将多个dom元素封装成伪数组
+            jQuery对象：
+                $().length返回伪数组含有几个元素
+                $().each(function(index, domelement){});遍历伪数组
+                $().index()返回该jQuery对象在伪数组的index
+                $()[index]  $().get(index)返回该索引下的dom元素
+        */ 
+
+
+        // jQuery对象中含有多个dom元素构成的伪数组
+        var $buttons = $('button');
+        // $().length返回伪数组含有几个元素
+        console.log($buttons.length);
+        // $().each(function(index, domelement){});遍历伪数组
+        $buttons.each(function(index,domele){
+            // console.log(index+ ":" +domele.innerHTML);
+            // 因为jQuery封装的是dom元素伪数组，所以this为dom元素
+            alert(typeof this);
+            console.log(index+":"+this.innerHTML)
+        });
+        // $().index()返回该jQuery对象在伪数组的index
+        console.log($("#btn3").index());
+        // $()[index]  $().get(index)返回该索引下的dom元素
+        console.log($buttons[2].innerHTML);
+        console.log($buttons.get(2).innerHTML);
+    </script>
+</body>
+</html>

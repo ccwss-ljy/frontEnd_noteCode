@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 创建对象
+        var obj = new Object();
+        // 给对象增加属性以及属性值
+        obj.name = "sunwukong";
+        obj.sex = "man";
+        obj.age = "12";
+        // 改属性值
+        obj.name = "tom";
+        // 删属性
+        delete obj.name;
+        console.log(obj);
+        // in运算符：
+        //      如果属性值在对象内为true，没有为false
+        console.log("sex" in obj);
+        console.log("xxx" in obj);
+        // 对象实际为引用类型，存的是地址。
+        var obj1 = obj;
+        console.log(obj1.sex);
+        // obj1和obj指向同一个地址，所以地址内属性修改，他们两都会改变
+        obj.name = "tom";
+        console.log(obj1.name);
+        // 如果两个对象存的属性相同，但是他两不等，因为对象存的是地址，两个地址不等
+        var obj2 = new Object();
+        var obj3 = new Object();
+        obj2.name = "xxx";
+        obj3.name = "xxx";
+        console.log(obj2 == obj3);
+        // 另外一种创建对象的方式
+        var obj4 = {
+            name: "xxx",
+            age: "18",
+            sex: "man"
+        };
+        console.log(obj4.sex);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

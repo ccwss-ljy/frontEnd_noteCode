@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color:#bfa;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var box1 = document.getElementsByClassName("box1")[0];
+            var btn01 = document.getElementById("btn01");
+            btn01.onclick = function(){
+                // 除IE8：读取当前样式
+                var obj = getComputedStyle(box1, null);
+                alert(obj.width);
+                // IE8：读取当前样式
+                alert(box1.currentStyle.width);
+                // 变量没找到会报错，属性没找到会报Undifined但是会运行
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="box1"></div>
+    <button id = "btn01">点我</button>
+</body>
+</html>

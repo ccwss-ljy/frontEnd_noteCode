@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .items{
+            width: 200px;
+            height: 200px;
+            border:1px red solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="items"></div>
+    <div class="items"></div>
+    <div class="items"></div>
+    <script>
+        let items = document.getElementsByClassName("items");
+        for(let i = 0;i < items.length;i++)
+        // 因为let变量只在代码块中起作用，所以每个i正好对应的当时这个块里的内容。如果用var定义变量就得用this。
+        {
+            items[i].onclick = function(){
+                items[i].style.background = "pink";
+            }
+        }
+    </script>
+</body>
+</html>

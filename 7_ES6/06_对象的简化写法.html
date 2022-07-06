@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = `xiaomei`;
+        let setName = function(){
+            console.log(1);
+        }
+        // ES6的对象简写方法，可以直接写属性和方法，不需要定义
+        let obj = {
+            name,
+            setName,
+            improve: function(){
+                console.log(2);
+            }
+        };
+        console.log(obj.name);
+    </script>
+</body>
+</html>

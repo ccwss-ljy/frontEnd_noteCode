@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name: "1234",
+            arr: [
+                "xiaoming",
+                "xiaotian",
+                "ning",
+            ],
+            [Symbol.iterator](){
+                let index = 0;
+                return{
+                    next: () => {                       
+                        if(index < this.arr.length){
+                            const result = {value: this.arr[index], done:false};
+                            index++;
+                            return result;
+                        }
+                        else{
+                            return {value: undefined, done:true};
+                        }
+                    }
+                };
+            }
+        };
+        // for...of返回value,并且运用了iterator对象。for...in返回index
+        for(let v of obj){
+            console.log(v);
+        }
+    </script>
+</body>
+</html>

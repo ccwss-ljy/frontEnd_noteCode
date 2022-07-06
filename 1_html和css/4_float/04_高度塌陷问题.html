@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            border: 10px red solid;
+            overflow: auto;
+            /* float: left; */
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            float: left;
+        }
+        /* 
+            BFC就是为了解决内部塌陷问题：
+            1、将外块也设定为浮动元素（不推荐，会使宽度丢失）
+            2、将元素设为行内块元素
+            3、overflow设为hidden或者auto
+         */
+    </style>
+</head>
+<body>
+    <!-- 
+        为了使块元素根据内容多少而改变大小，不设定外块大小，设定内块大小从而撑开外块。但是当内块设定为浮动元素就会产生内部塌陷问题。
+     -->
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

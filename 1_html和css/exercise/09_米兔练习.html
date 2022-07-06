@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 使用过渡 */
+        /* .box1{
+            background-image:url(./图片/米兔.png);
+            width: 132px;
+            height: 271px;
+            margin:0 auto;
+            transition:0.5s steps(3);
+        }
+        .box1:hover{
+            background-position:-396px;
+        } */
+        /* 使用动画 */
+        .box1{
+            background-image:url(./图片/米兔.png);
+            width: 132px;
+            height: 271px;
+            margin:0 auto;
+            animation-name:test;
+            animation-duration:0.4s;
+            animation-iteration-count:infinite;
+            animation-timing-function:steps(3);
+        }
+        @keyframes test{
+            from{
+                background-position: 0px;
+            }
+            to{
+                background-position: -396px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

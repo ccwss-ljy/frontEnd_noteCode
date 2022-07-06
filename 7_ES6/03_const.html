@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 声明常量以后，不可以更改，必须定初值，且潜规则为都大写
+        {
+            const SCHOOL = "尚硅谷";
+            console.log(SCHOOL);
+            // 可以在数组或对象中更改内容，但是不可以更改数组或对象
+            const ARR = [1, 2, 3];
+            ARR.push(4);
+            console.log(ARR);
+        }
+        // 块级作用域，不识别该SCHOOL
+        console.log(SCHOOL);
+    </script>
+</body>
+</html>

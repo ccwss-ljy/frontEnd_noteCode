@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            border:10px solid red;
+            position: relative;
+            overflow:auto;
+        }
+        .box2{
+            width: 500px;
+            height: 500px;
+            background-color: black;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var btn01 = document.getElementById("btn01");
+            var box1 = document.getElementsByClassName("box1")[0];
+            var box2 = document.getElementsByClassName("box2")[0];
+            btn01.onclick = function(){
+                /*
+                    // clientWidth:内容区和内边距总宽度
+                    alert(box1.clientWidth);
+                    // clientHeight:内容区和内边距总高度
+                    alert(box1.clientHeight);
+                */ 
+                /*
+                    // offsetWidth:总宽度
+                    alert(box1.offsetWidth);
+                    // offsetHeight:总高度
+                    alert(box1.offsetHeight);
+                    // offsetLeft:相对于包含块左边距
+                    alert(box2.offsetLeft);
+                    // offsetTop:相对于包含块上边距
+                    alert(box2.offsetTop);               
+                */ 
+                    
+                /*
+                    // scrollWidth:滚动模式下的总宽度
+                        // alert(box1.scrollWidth);
+                    // scrollHeight:滚动模式下的总高度
+                        // alert(box1.scrollHeight);
+                    // scrollLeft:滚动模式下距离视图左边距
+                        alert(box1.scrollLeft);
+                    // scrollTop:滚动模式下距离视图上边距
+                        alert(box1.scrollTop);
+                    // onscroll:滚动条的响应事件
+                    // input中的disabled属性：disabled = true|false，代表该input是否可以使用
+                */
+                 
+                
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <button id="btn01">点我</button>
+</body>
+</html>

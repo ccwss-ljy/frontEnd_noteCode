@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width:200px;
+            height:200px;
+            background-color:green;
+            margin-bottom: 20px;
+            /* border-top: 1px green solid; */
+            /* padding-top: 100px; */
+        }
+        .outer2{
+            width:200px;
+            height:200px;
+            background-color: blue;
+            margin-top: 60px;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            
+        }
+        /* 
+            兄弟外边距为同符号值取绝对值的最大值；
+            一正一负求和；
+            父子外边距需要采取两种方法来解决。
+         */
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+    <div class="outer2"></div>
+</body>
+</html>

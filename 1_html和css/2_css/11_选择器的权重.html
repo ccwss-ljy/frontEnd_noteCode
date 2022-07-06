@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+        选择器的权重：
+        * !important
+        1、内联样式
+        2、id选择器
+        3、类和伪类选择器
+        4、元素选择器
+        5、通配选择器
+        6、继承样式
+         */
+
+        
+        *{
+            color: gray;
+        }
+        #id{
+            color: red;
+        }
+        .class{
+            color: green;
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div id="id" class="class" style="color: hotpink;">
+        <p>我是p</p> 
+    </div>
+</body>
+</html>

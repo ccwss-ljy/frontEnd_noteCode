@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            float: left;
+            /* 
+                1、当块元素变为浮动元素就脱离文档流,没有水平布局的要求了
+                2、后面的块元素不会越过前面的块元素
+                3、当前面的块元素变为浮动元素，后面的文档流块元素可以自动向前
+                4、但是前面有文档流块元素的话，浮动块元素不会向前
+                5、浮动元素不会超出它的父元素
+             */
+        }
+        .box2{
+            height: 100px;
+            width: 100px;
+            background-color: yellow;
+            float: left;
+        }
+        .box3{
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+
+</body>
+</html>

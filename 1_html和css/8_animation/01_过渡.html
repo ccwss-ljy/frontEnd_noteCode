@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 800px;
+            height: 800px;
+            background-color: blue;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            margin-left:600px;
+        }
+        .box1:hover .box2{
+            width: 400px;
+            height: 400px;
+            /* transition:all 2s; */
+            transition-duration:2s;
+            margin-left: 0;
+            transition-timing-function:steps(3);
+            transition-delay: 2s;
+            /* transition-timing-function:linear; */
+            /* transition-timing-function:ease-in; */
+        }
+        /* 
+            transition-property:
+                指定要执行过渡的属性
+                    width，height或者all
+            trasition-duration：
+                过渡持续时间
+            transition-timing-function:  
+                过渡的方式：
+                    ease：先快后慢
+                    linear：线性
+                    ease-in：加速
+                    ease-out：减速
+                    ease-in-out:先加速后减速
+                    cubic-bezier()百度一下
+                    steps()按步数走
+            transition-delay:
+                延迟多久走
+            transition：
+                没有顺序，只有前面是持续时间，后面是延迟时间
+         */
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

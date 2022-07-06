@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造函数
+        function Phone(brand, price){
+            this.brand = brand;
+            this.price = price;
+        }
+        // 创建方法
+        Phone.prototype.a = function(){
+            console.log(1);
+        }
+
+        // 构造函数
+        function Smartphone(brand, size, color){
+            // 继承父类属性
+            Phone.call(this, brand);
+            this.size = size;
+            this.color = color;
+        }
+        // 继承父类方法
+        Smartphone.prototype = new Phone();
+        // 创建方法
+        Smartphone.prototype.b = function(){
+            console.log(2);
+        }
+        let oneplus = new Phone("1+", 1999);
+        console.log(oneplus.brand);
+        
+        let nokia = new Smartphone("nokia", 2999, "red");
+        nokia.a();
+        nokia.b();
+        console.log(nokia);
+    </script>
+</body>
+</html>

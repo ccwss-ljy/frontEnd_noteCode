@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script src="./js/prop-types.js"></script>
+    <script type="text/babel">
+        class Demo extends React.Component{
+            show = ()=>{
+                // 解构赋值，将refs中的input1属性提取出来
+                const {input1} = this.refs;
+                alert(input1.value);
+            }
+            show2 = ()=>{
+                const {input2} = this.refs;
+                alert(input2.value);
+            }
+            render(){
+                return (
+                    // ref:相当于给该标签添加标识，并加入到实例对象的refs对象中
+                    <div>
+                        <input ref="input1" placeholder="点击右边按钮显示" type="text"/>
+                        <button onClick={this.show}>点一下</button>
+                        <input ref="input2" onBlur={this.show2} placeholder="消失焦点显示" type="text"/>
+                    </div>
+                )
+            }
+        }
+        ReactDOM.render(<Demo/>, document.getElementById("result"));
+    </script>
+</body>
+</html>

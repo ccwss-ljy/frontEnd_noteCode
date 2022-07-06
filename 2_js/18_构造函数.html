@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 构造函数
+        // 构造函数中的this就属于该构造函数
+        function Person(name, sex, age){
+            this.name = name;
+            this.sex = sex;
+            this.age = age;
+        }
+        var per = new Person("xxx", "man", 18);
+        console.log(per.name);
+        function Dog(name, age){
+            this.name = name;
+            this.age = age;
+        }
+        var dog = new Dog("xx",15);
+        console.log(dog.name);
+
+        function Cat(name, age, gender){
+            this.name = name;
+            this.age = age;
+            this.gender = gender;
+        }
+
+        var cat = new Cat('zs', 12, 'male');
+        console.log(cat.name);
+
+        // instanceof:判断一个对象是否为一个类的实例
+        // 任何一个实例都属于Object
+        console.log(cat instanceof Cat)
+        console.log(cat instanceof Dog)
+        console.log(cat instanceof Object);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

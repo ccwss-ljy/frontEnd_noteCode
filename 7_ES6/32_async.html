@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        async function fn(){
+            // 当返回不为promise对象，返回promise为成功
+            // return "haha";
+            // 当返回promise对象，如果为成功则为成功，若为失败则为失败
+            return new Promise(function(resolve, reject){
+                // resolve("成功了");
+                reject("失败了");
+            });
+        }
+        console.log(fn());
+    </script>
+</body>
+</html>

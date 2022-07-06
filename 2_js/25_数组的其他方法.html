@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var arr = [11, 3, 4, 5, 2, 7, 1];
+        var arr1 = [2, 3, 4, 5, 1, 4];
+        // concat将两个数组拼接在一起，不影响原数组
+        var arr2 = arr.concat(arr1);
+        // console.log(arr2);
+        // join:将数组转化为String，所填参数为分隔符
+        var result = arr.join("hello");
+        // console.log(result);
+        // reverse：将数组倒序，影响数组
+        arr.reverse();
+        console.log(arr.reverse());
+        // sort:将数组根据unicode字典序排序，影响原数组，如果为数字排序不可用基本排序，需要回调函数
+        // 根据return的值来改变排序结果：
+        // return <0：交换顺序
+        // return >=0: 不交换位置
+        // return a-b: 顺序
+        // return b-a：逆序
+        arr.sort(function(a, b){
+            return a-b;
+        });
+        // console.log(arr);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

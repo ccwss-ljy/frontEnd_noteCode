@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #btn1{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="btn1"></div>
+    <script>
+        // 响应事件参数中的回调函数，function的this对应响应发起者，而箭头函数的this对应于上一级
+        let div = document.getElementById("btn1");
+        div.addEventListener("click", function (){
+            // 此时的this已经在一个新的function函数体内，所以this不在是div
+            /* setTimeout(function(){
+                console.log(this);
+                this.style.backgroundColor = "pink";
+            }, 2000); */
+            // 箭头定义函数
+            setTimeout(() => {
+                console.log(this);
+                this.style.backgroundColor = "pink";
+            }, 2000)
+            
+        });
+    </script>
+</body>
+</html>

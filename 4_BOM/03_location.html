@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button id="btn1">点我一下</button>
+    <script>
+        /*
+            location的跳转方法：
+                -直接更改location地址
+                -使用location.assign()
+                -使用location.replace()。这三种都不会产生历史页面
+        */  
+        // location="https://www.baidu.com/";
+        // location.assign("https://www.baidu.com/");
+        // location.replace("https://www.baidu.com/");
+        /*
+            location.reload():
+                -重新加载页面，参数添加true将强制刷新缓存记录
+        */ 
+        var btn1 = document.getElementById("btn1");
+        btn1.onclick = function(){
+            location.reload(true);
+        }
+    </script>
+</body>
+</html>

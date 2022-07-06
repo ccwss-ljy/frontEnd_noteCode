@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            // price为属性值，用该方法可以获取动态的price属性值，例如求财政总计，可以使用函数，返回不停变化的财政总计
+            get price(){
+                console.log("获取属性");
+                // return 返回的就是price的属性值
+                return 1900;
+            }
+            // set的作用是更改price值，比如在set里添加判断函数来决定是否改值
+            set price(newVal){
+                console.log("更改了值");
+            }
+        }
+        let nokia = new Phone();
+        console.log(nokia.price);
+        nokia.price = 1000;
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            // 获取body元素
+            var body = document.body;
+            // alert(body);    
+            // 获取HTML元素
+            var html = document.documentElement;
+            // alert(html);
+            // 获取全部元素
+            var all = document.all;
+            // alert(all.length);
+            // 获取class元素,兼容ie8以上
+            var box1 = document.getElementsByClassName("box1");
+            alert(box1[0].innerHTML);
+            // 用css选择器来做,该方法只能选匹配到的第一个返回
+            var box = document.querySelector(".box1 div");
+            alert(box.innerHTML);
+            // 该方法可以返回所有，并用数组返回
+            var boxx = document.querySelectorAll(".box1");
+            alert(boxx[0].innerHTML);
+        }
+    </script>
+</head>
+<body>
+    <div class="box1">
+        innf
+        <div>
+            123
+        </div>
+    </div>
+    <div class="box1"></div>
+    <div class="box1"></div>
+</body>
+</html>

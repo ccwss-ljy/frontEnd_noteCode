@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Object.is判断是否相等
+        console.log(Object.is(NaN, NaN));
+
+        // Object.assign 如果存在进行覆盖，不存在合并
+        /* a = {
+            name: 132,
+            age: 12,
+            sex: "man"
+        };
+        b = {
+            name: 111,
+            age: 13
+        }
+        c = Object.assign(a, b);
+        console.log(c); */
+
+        // Object.setPrototypeOf设置prototype对象
+        a = {
+            name: 132,
+            age: 12,
+            sex: "man"
+        };
+        b = {
+            name: 111,
+            age: 13
+        }
+        // 向a的__proto__中添加b对象
+        Object.setPrototypeOf(a, b);
+        console.log(a);
+        //Object.getPrototypeOf获取prototype对象
+        //获取a中的__proto__对象
+        console.log(Object.getPrototypeOf(a, b));
+    </script>
+</body>
+
+</html>

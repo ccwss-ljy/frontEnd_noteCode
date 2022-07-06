@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            list-style:none;
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            width: 600px;
+            height: 800px;
+            border:red solid 1px;
+            font-size:50px;
+            line-height: 100px;
+            text-align: center;
+            display: flex;
+            /* 
+                flex-wrap: 
+                    是否向侧轴方向延伸
+                        -wrap 延伸
+                        -nowrap 不延伸
+                        -wrap-reverse 反向延伸
+             */
+            /* flex-wrap: wrap; */
+            /* 
+                flex-flow: 
+                    flex-direction和flex-wrap的简写
+             */
+            flex-flow:row wrap-reverse;
+            /* 
+                justify-content: 
+                    flex内容的填充方式：
+                        -flex-start 从初始位置开始
+                        -flex-end 从末尾位置开始
+                        -center 居中
+                        -space-around 空白在内容两侧
+                        -space-evenly 空白在内容一侧
+                        -space-between 空白在内容之间
+             */
+            /* justify-content:space-between; */
+
+            /* 
+                align-items：
+                    侧轴对齐方式：
+                        -stretch 默认值，每行长度相同
+                        -flex-start 按开始对齐
+                        -flex-end 按末尾对齐
+                        -center 中间对齐
+                        -baseline 按基线对齐
+             */
+            /* 
+                align-content: 
+                    侧轴内容对齐方式：
+                        和主轴基本相同
+             */
+            align-items:flex-start;
+            align-content:space-between;
+
+        }
+        li{
+            flex-shrink: 0;
+            /* flex-grow:1; */
+            width: 200px;
+            /* height: 100px;*/
+        }
+        li:nth-child(1){
+            background-color:red;  
+            /* align-self: 控制该元素的侧轴对齐方式，覆盖align-items */
+            align-self:stretch;
+
+        }
+        li:nth-child(2){
+            background-color: blue;    
+        }
+        li:nth-child(3){
+            background-color:green;
+        }
+        li:nth-child(4){
+            background-color:orange;
+        }
+        li:nth-child(5){
+            background-color:tomato;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2
+            <div>
+                2
+            </div>
+        </li>
+        <li>3
+            <div>3</div>
+            <div>3</div>
+        </li>
+        <li>1</li>
+        <li>2
+            <div>
+                2
+            </div>
+        </li>
+
+    </ul>
+</body>
+</html>

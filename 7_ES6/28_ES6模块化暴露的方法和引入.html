@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+        // 1.通用引入方式
+        // 分别暴露
+        import * as m1 from "./js/m1.js"
+        console.log(m1);
+        // 同一暴露
+        import * as m2 from "./js/m2.js"
+        console.log(m2);
+        // 默认暴露
+        import * as m3 from "./js/m3.js"
+        // 使用时要多加一层default
+        console.log(m3);
+        m3.default();
+
+        // 2.解构赋值方式
+        // 分别暴露
+        /* import {school, learn} from "./js/m1.js"
+        console.log(school);
+        // 统一暴露
+        import {school as sch, learn as lea} from "./js/m2.js" //如果有重名可以用as
+        console.log(sch);
+        // 默认暴露
+        import {default as m3} from "./js/m3.js"
+        console.log(m3); */
+
+        // 3.简单方式，只针对默认暴露
+        // import m3 from "./js/m3.js"
+        // console.log(m3);
+    </script>
+</body>
+</html>

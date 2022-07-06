@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var btn1 = document.getElementById("btn1");
+            btn1.onclick = function(){
+                // history.length: 总共有几个历史页面
+                // alert(history.length);
+                // history.forward(): 前进一页
+                // history.forward();
+                // history.back: 后退一页
+                // history.back();
+                // history.go(): 指定前进或后退多少页面
+                history.go(-2);
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <button id="btn1">点我</button>
+</body>
+</html>

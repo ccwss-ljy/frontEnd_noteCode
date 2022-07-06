@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // resolve对应正确情况，reject对应错误情况
+        // let p = new Promise(function(resolve, reject){
+        //     setTimeout(() => {
+        //         // let a = "用户数据";
+        //         // resolve(a);
+        //         let b = "处理错误";
+        //         reject(b);
+        //     }, 1000);
+        // });
+        // p.then第一个函数对应正确情况，第二个对应错误情况
+        // p.then(function(value){
+        //     console.log(value);
+        // },function(reason){
+        //     console.error(reason);
+        // });
+
+        // Promise.resolve返回一个promise对象，return非promise对象和promise的resolve
+        // 返回fulfilled，promise的reject对象返回reject状态
+        // let pp = Promise.resolve(new Promise((resolve, reject) => {
+        //     resolve(123);
+        // }));
+        // console.log(pp);
+
+        // Promise.reject不管返回什么都为reject状态
+        // let pp1 = Promise.reject(new Promise((resolve, reject)=>{
+        //     resolve(123);
+        // }));
+        // console.log(pp1);
+
+        //中断 promise链的方法是在中间添加pending状态
+        
+    </script>
+</body>
+</html>

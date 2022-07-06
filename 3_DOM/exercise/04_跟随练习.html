@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            
+            /* left: 200px; */
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            // var body1 = document.body;
+            var box1 = document.getElementsByClassName("box1")[0];
+            var html = document.documentElement;
+            document.onmousemove = function(event){
+                // 该方法可以解决滚动滚动条鼠标换位置的问题，但是不兼容IE8，因为没有pageX
+                /*
+                    var left = window.event.pageX;
+                    var top = window.event.pageY;
+                */ 
+                var left = window.event.clientX;
+                var top = window.event.clientY;   
+                var sl =  html.scrollLeft;
+                var st = html.scrollTop;           
+                // 切记要加px，因为求出的clientX和clientY为数值
+                box1.style.left = sl + left + "px";
+                box1.style.top = st + top + "px";
+            }
+        }
+    </script>
+</head>
+<body style="height: 2000px">
+    <div class="box1"></div>
+    
+</body>
+</html>

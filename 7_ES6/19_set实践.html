@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr1 = [1, 2, 3, 4, 3, 2, 1];
+        arr2 = [3, 4, 5, 3, 4, 5];
+        // 数组去重
+        let s1 = new Set(arr1);
+        arr1 = [...s1];
+        console.log(arr1);
+        // 交集
+        let s2 = new Set(arr2);
+        arr2 = [...s2];
+        console.log(arr2);
+        let intersection = arr1.filter(items => s2.has(items));
+        console.log(intersection);
+        // 并集
+        let arr3 = [...arr1, ...arr2];
+        let union = [...new Set(arr3)];
+        console.log(union);
+        // 差集
+        let dSet = arr1.filter(items => !(s2.has(items)));
+        console.log(dSet);
+    </script>
+</body>
+</html>

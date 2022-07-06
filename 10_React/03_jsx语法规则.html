@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="test"></div>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+    <script type="text/babel">
+        /* 
+            jsx语法规则：
+                1.只能有一个根标签
+                2.每个标签必须有结束，比如input需要写自结束
+                3.引用js变量表达式加{}
+                4.内联样式需要style={{key:value}}这样表示，且每个key使用驼峰式
+                5.class要使用className
+        */
+        let data = 'haha';
+        const VDOM = (
+            <h1 className="lala" title={data} style={{color: "red", fontSize: "30px"}}>
+                <span>
+                    hello react
+                </span>
+            </h1>
+        );
+        ReactDOM.render(VDOM, document.getElementById("test"));
+    </script>
+</body>
+
+</html>

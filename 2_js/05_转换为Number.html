@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            转换为Number：
+                -Number（）
+                    如果字符串中有除数字之外的，结果为NaN。
+                    -true -> 1
+                    -talse -> 0
+                    -null -> 0
+                    -&nbsp \t \n -> 0
+                -parseInt（）
+                    提取字符串中首几个数字，后面的不要。除数字之外的都不识别。
+                    没有识别出数字的话，都为NaN
+        */
+        // var a = null;
+        // a = Number(a);
+        // console.log(a);
+        // console.log(typeof a);
+        var a = 'a123xp';
+        a = parseInt(a);
+        console.log(a);
+        console.log(typeof a);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

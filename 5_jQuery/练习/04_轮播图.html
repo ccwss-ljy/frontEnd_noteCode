@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../fa/css/all.css">
+    <!-- 轮播图样式 -->
+    <style>
+        a{
+            text-decoration:none;
+            display: block;
+        }
+        .outer{
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            position:relative;
+            /* overflow:hidden; */
+        }
+        .list{
+            width: 2100px;
+            height: 300px;
+            position:absolute;
+        }
+        .list li{
+            float:left;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+        }
+        .list_a{
+            position: absolute;
+            bottom: 10px;
+            
+        }
+        .list_a li{
+            margin-right:10px;
+            float:left;
+        }
+        .list_a a{
+            border-radius:50%;
+            width: 10px;
+            height: 10px;
+            background-color: black;
+        }
+        .left{
+            width: 30px;
+            height: 50px;
+            background-color: #ddd;
+            position:absolute;
+            top: 130px;
+            font-size: 50px;
+        }
+        .left a,.right a{
+            color:black;
+            width: 30px;
+            height: 50px;
+        }
+        .right{
+            width: 30px;
+            height: 50px;
+            background-color: #ddd;
+            position:absolute;
+            top: 130px;
+            right: 0px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 轮播图基本结构 -->
+    <div class="outer">
+        <ul class="list" style="left:-300px;">
+            <li>
+                <img src="../图片/5.jpg" alt="">
+            </li>
+            <li>
+                <img src="../图片/1.jpg" alt="">
+            </li>
+            <li>
+                <img src="../图片/2.jpg" alt="">
+            </li>
+            <li>
+                <img src="../图片/3.jpg" alt="">
+            </li>
+            <li>
+                <img src="../图片/4.jpg" alt="">
+            </li>
+            <li>
+                <img src="../图片/5.jpg" alt="">
+            </li>
+            
+            <li>
+                <img src="../图片/1.jpg" alt="">
+            </li>
+        </ul> 
+        <ul class="list_a">
+            <li>
+                <a href="javascript:;"></a>
+            </li>
+            <li>
+                <a href="javascript:;"></a>
+            </li>
+            <li>
+                <a href="javascript:;"></a>
+            </li>
+            <li>
+                <a href="javascript:;"></a>
+            </li>
+            <li>
+                <a href="javascript:;"></a>
+            </li>
+        </ul>
+        <div class="left">
+            <a href="javascript:;" class="fas">&#xf104</a>
+        </div>
+        <div class="right">
+            <a href="javascript:;" class="fas">&#xf105</a>
+        </div>
+    </div>
+    <!-- 引入jQuery -->
+    <script src="../js/jQ.js"></script>
+    <!-- 轮播图动画 -->
+    <script src="./轮播图_js/animation.js"></script>
+</body>
+</html>

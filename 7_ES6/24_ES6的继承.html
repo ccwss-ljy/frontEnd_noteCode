@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Phone{
+            constructor(brand, price){
+                this.brand = brand;
+                this.price = price;
+            }
+            call(){
+                console.log(1);
+            }
+        }
+        // 继承父类
+        class Smartphone extends Phone{
+            constructor(brand, price, size, color){
+                // 继承父类构造函数
+                super(brand, price);
+                this.size = size;
+                this.color = color;
+            }
+            photo(){
+                console.log(2);
+            }
+            playgame(){
+                console.log(3);
+            }
+            // 如果取同名方法，就调用不了父类方法
+            call(){
+                console.log("这样就用不了父类同名方法了");
+            }
+        }
+        let nokia = new Smartphone("nokia", 1900, 20, "red");
+        nokia.photo();
+        // 继承的父类方法
+        // nokia.call();
+        nokia.call();
+        nokia.playgame();
+        console.log(nokia.brand);
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #request{
+            width: 500px;
+            height: 500px;
+            border:blueviolet 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">点击发送请求</button>
+    <div id="request"></div>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        btn1.onclick = function(){
+            /* 
+                响应：
+                    1.创建请求对象
+                    2.初始化请求对象
+                    3.发送请求
+                    4.接收响应
+            */
+            // 创建请求对象
+            const XHR = new XMLHttpRequest();
+            // 初始化请求对象
+            // 参数：模式，url
+            // 传参：在url后面加?然后加参数
+            XHR.open("GET", "http://127.0.0.1:8000/server?a=100&b=200&c=300");
+            // 发送请求
+            XHR.send();
+            // 接收响应
+            /* 
+                onreadystatechange解读：
+                    on -当。。。时候
+                    readystate -准备的状态
+                        分为五种：
+                        0 -未初始化
+                        1 -初始化，open方法调用完毕
+                        2 -send方法调用完毕
+                        3 -服务端返回了部分结果
+                        4 -服务端返回了所有结果
+            */
+            XHR.onreadystatechange = function(){
+                if(XHR.readyState === 4){
+                    // 判断响应状态码：200 404 403 401 500
+                    // 响应状态码为2**证明响应成功
+                    /* 
+                        响应报文：
+                            由行、头、空行、体构成
+                    */
+                    if(XHR.status >= 200 && XHR.status < 300){
+                        console.log(XHR.status);//响应行状态码
+                        console.log(XHR.statusText);//响应行状态码字符串
+                        console.log(XHR.getAllResponseHeaders());//响应头
+                        console.log(XHR.response);//响应体
+                        // 显示到div内
+                        let request = document.getElementById("request");
+                        request.innerHTML = XHR.response;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

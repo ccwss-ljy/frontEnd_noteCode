@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // set只存在唯一数据
+        let set = new Set(["大娃","二娃","三娃","大娃"]);
+        console.log(set);
+        // 增加
+        set.add("四娃");
+        console.log(set);
+        // 删除
+        set.delete("二娃");
+        console.log(set);
+        // 检查是否存在 
+        console.log(set.has("五娃"));
+        console.log(set.has("大娃"));
+        // 因为set存在iterator对象，所以可以用for...of遍历
+        for(let v of set){
+            console.log(v);
+        }
+        // 清空
+        set.clear();
+        console.log(set);
+    </script>
+</body>
+</html>

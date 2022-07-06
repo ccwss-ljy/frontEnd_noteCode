@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            split:
+                通过正则表达式进行拆分,不会更改原数组
+        */ 
+        var str = "1a2b3c4d5g6f";
+        var result = str.split(/[A-z]/);
+        console.log(result);
+        /*
+            search:
+                通过正则表达式进行查找第一个匹配的字符，g全局匹配没有用
+        */ 
+        var str = "hello abc hello aec hello adc";
+        var result = str.search(/a[bed]c/);
+        console.log(result);
+        /*
+            match:
+                通过正则表达式找出匹配字符，通过g全局匹配可以找出所有匹配项，并列为数组，不会更改原字符串
+        */ 
+        var str = "hello abc hello aec hello adc";
+        var result = str.match(/a[bed]c/g);
+        console.log(result);
+        /*
+            replace:
+                通过正则表达式找出相应字符，并进行替换，使用g全局匹配进行全部替换，不会更改原字符串
+        */ 
+        var str = "hello abc hello aec hello adc";
+        var result = str.replace(/a[bed]c/g, "b");
+        console.log(result);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

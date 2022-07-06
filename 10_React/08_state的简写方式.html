@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="request"></div>
+    <script src="./js/react.development.js"></script>
+    <script src="./js/react-dom.development.js"></script>
+    <script src="./js/babel.min.js"></script>
+    <script type="text/babel">
+        class Weather extends React.Component{
+            state = {isHot: true};
+            render(){
+                return <h1 onClick={this.changeWeather}>今天天气很{this.state.isHot == true ? "炎热" : "凉爽"}</h1>
+            }
+            changeWeather = ()=>{
+                // 箭头函数自身没有this，会直接取到的是上级的this
+                const isHot = this.state.isHot;
+                this.setState({isHot: !isHot});
+                
+            }
+        }
+        ReactDOM.render(<Weather/>, document.getElementById("request"));
+        let w1 = new Weather();
+        console.log(w1);
+    </script>
+</body>
+</html>

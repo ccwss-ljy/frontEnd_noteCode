@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            border: 10px red double;
+            background-color: #bfa;
+            padding: 5px;
+            /* 
+                background-clip:背景大小
+                    1.border-box（到border）
+                    2.padding-box（到padding）
+                    3.content-box（到content）
+             */
+             /* 
+                background-origin:元素的原点(如本节的图片原点)
+                    1.border-box（原点为border）
+                    2.padding-box（原点为padding）
+                    3.content-box（原点为content）
+              */
+            background-image: url("../exercise/图片/download.jpg");
+            background-repeat: no-repeat;
+            background-clip:border-box;
+            background-origin:content-box;
+            /* 
+                background-size:
+                    1.cover(图片按照原比例，但是要铺满)
+                    2.contain（图片按照原比例，但是必须要有全图）
+             */
+            background-size:contain;
+            /* 
+                background-attachment：
+                    1.scroll背景跟着动
+                    2.fixed 背景不动
+             */
+
+             /* 
+                background: (简写模式)
+                    1.没有顺序
+                    2.background-size必须跟在background-position后面,加/号
+                    3.background-origin必须在background-clip前面
+              */
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

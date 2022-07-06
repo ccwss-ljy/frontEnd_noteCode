@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            绝对定位的特点：
+                1、脱离文档流
+                2、它的相对的位置是它的包含块
+            
+            
+            包含块：
+                1、正常情况下：
+                    某元素离它最近的祖先块元素
+                    <div class='outer'><div class='inner'></div></div>
+                    (inner的包含块就是outer)
+                    <div><span><em></em></span></div>
+                    (em的包含块就是div)
+                2、绝对定位的包含块：
+                    某元素离它最近的开启定位的祖先块元素
+         */
+         *{
+             font-size: 60px;
+         }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+        .box4{
+            width: 400px;
+            height: 400px;
+            background-color: tomato;
+            position: relative;
+        }
+        .box5{
+            width: 200px;
+            height: 200px;
+            background-color: white;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+    <div class="box4">
+        <div class="box5"></div>
+    </div>
+</body>
+</html>

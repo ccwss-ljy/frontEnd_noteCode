@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        key的作用：
+            React本质：
+                当有数据进行变化时，产生虚拟dom，然后再产生真实dom
+            React更新本质：
+                当有数据更新时，产生虚拟dom然后通过key进行比较：
+                    1）当有相同key时：
+                        -如果内容相同，则直接复用
+                        -如果内容不同，则修改内容，然后转变为真实dom使用
+                    2）当key不同时：
+                        -产生新的真实dom
+                    综上：直接复用是最省效率的
+        为什么不把index做key：（如果不影响排列顺序，使用index做key效率不会受影响）
+            1）使用index
+            原始数据：
+                <span key=0>小王</span>
+                <span key=1>小李</span>
+            更新数据：
+                <span key=0>小张</span>
+                <span key=1>小王</span>
+                <span key=2>小李</span>
+            此时新插入的小张key=0，和原始小王key相同，所以修改内容，重新生成真实dom，新小王更改原始小李，新小李因为没有相同的key所以生成新的真实dom。总共产生3个新的真实dom，效率低。
+            2）使用id
+            原始数据：
+                <span key=0>小王</span>
+                <span key=1>小李</span>
+            更新数据：
+                <span key=2>小张</span>
+                <span key=0>小王</span>
+                <span key=1>小李</span>
+            只有小张是新插入的，生成新的真实dom，效率高
+     -->
+</body>
+</html>

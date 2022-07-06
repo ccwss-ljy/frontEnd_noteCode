@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let one = {
+            skillOne : "天音波"
+        }
+        let two = {
+            skillTwo: "金钟罩"
+        }
+        let three = {
+            skillThree: "破"
+        }
+        let four = {
+            skillFour: "猛龙摆尾"
+        }
+        // ES9将扩展运算符应用到了对象
+        let mangsen = {...one, ...two, ...three, ...four};
+        console.log(mangsen);
+
+        // ES9可以将rest用到解构赋值
+        function fn({brand, price, ...user}){
+            console.log(brand);
+            console.log(price);
+            console.log(user);
+        }
+        fn({
+            brand: "nokia",
+            price: 1200,
+            size: 200,
+            color: "red"
+        });
+    </script>
+</body>
+</html>

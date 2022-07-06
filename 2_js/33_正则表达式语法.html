@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            ^a: 开头是a
+            [^a]: 除了a都可（前面有）
+            a$: 末尾是a
+            ^a$: 只能有一个a
+            ^a|a$: 开头或者末尾是a
+            a{m, n}: 可以有m-n个a
+            a+: 至少一个a
+            a*: 至少0个a
+            a?: 只能是一个a或者0个a
+        */ 
+        var str = "bab";
+        var reg = /ba?b/;
+        console.log(reg.test(str));
+
+        /*
+            正则表达式练习：
+        */ 
+        var phone = "13334556476";
+        var reg = /^1[3-9][0-9]{9}$/;
+        console.log(reg.test(phone));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

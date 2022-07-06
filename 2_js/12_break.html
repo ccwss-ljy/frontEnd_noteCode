@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 开启计时器
+        console.time("test");
+        // 这种break直接终止到标签处
+        outer:
+        for(var i = 0;i < 10;i++){
+            console.log(i);
+            for(var j = 0;j < 10;j++){
+                console.log(j);
+                break outer;
+            }
+        }
+        // 终止计时器
+        console.timeEnd("test");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

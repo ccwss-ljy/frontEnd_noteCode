@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let person = {
+            name:'zs',
+            age:18
+        }
+        let number = 18
+        Object.defineProperty(person, 'sex', {
+            // value:'男',
+            // enumerable:true, //是否可以遍历
+            // writable:true, //是否可写
+            // configurable:true, //是否可以删除
+
+            get(){
+                return number
+            },
+            set(value){
+                number = value
+            }
+        })
+        person.sex = '男'
+        console.log(person.sex)
+    </script>
+</body>
+</html>

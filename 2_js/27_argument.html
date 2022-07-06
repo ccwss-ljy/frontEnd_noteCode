@@ -1,0 +1,26 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script>
+        /*
+            arguments:函数的隐藏参数，封装实参的类数组，与其他结构无关
+            arguments.callee对应所指的函数对象
+        */  
+        function fun(){
+            console.log("123");
+            console.log(arguments[0]);
+            console.log(arguments.length);
+            console.log(arguments.callee == fun);
+        }
+        fun(1,2,3,4);
+        
+     </script>
+ </head>
+ <body>
+     
+ </body>
+ </html>

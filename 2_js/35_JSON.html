@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 为了兼容各个语言，提出了JSON，可以将js语句封装成字符串，或者把字符串转为js语句
+        var obj = {name:"孙悟空", age:"18", sex:"man"};
+        // 将js对象改为JSON字符串
+        var str = JSON.stringify(obj)
+        console.log(typeof str);
+        // 将JSON字符串改为js对象
+        var obj = JSON.parse(str);
+        console.log(obj.name);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

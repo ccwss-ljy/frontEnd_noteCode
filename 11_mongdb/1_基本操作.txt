@@ -1,0 +1,83 @@
+基本概念：
+    database（数据库）
+    collection（集合）
+    document（文档）
+    database和collenction不需要手动创建，创建document时自动创建这两项
+
+1. show databases/show dbs 
+        -展示有几个数据库
+2. use 数据库 
+        -进入到指定数据库
+3. db 
+        -进入到当前数据库
+4. show collections 
+        -展示有几个集合
+
+数据库的CRUD操作
+插入：
+1. db.(collection[集合名称]).insert()
+        -向集合中插入一个或多个文档，多个文档需要使用数组
+2. db.(collection[集合名称]).insertOne()
+        -向集合中插入一个文档
+3. db.(collection[集合名称]).insertMany()
+        -向集合中插入多个文档
+查询：
+1. db.(collection[集合名称]).find()
+        -查询当前集合中的所有文档，返回一个数组
+2. db.(collection[集合名称]).findOne()
+        -查询当前集合中符合要求的第一个文档
+3. db.(collection[集合名称]).find().count()
+        -返回该集合下有多少个文档
+4. db.(collection[集合名称]).find().skip(?)
+        -跳过前几条
+5. db.(collection[集合名称]).find().limit(?);
+        -显示多少条
+6. db.().find({$or[{条件一},{条件二}]})
+修改：
+1. db.(collection[集合名称]).update(
+    {匹配},
+    {
+        $inc:{
+                自增 
+        }
+        $push:{
+                插入内容
+        }
+        $set:{
+                修改内容
+        },
+        $unset:{
+                删除内容
+        }
+        $lt:{
+                小于。。
+        }
+        $gt:{
+                大于。。
+        }
+        $eq:{
+                等于。。
+        }
+        $ne:{
+                不等于。。
+        }
+    },
+    {
+        multi:boolen(是否修改多个[默认只修改一个])
+    }
+)
+2. db.(collection[集合名称]).updateOne();
+        -只修改一个
+3. db.(collection[集合名称]).updateMany();
+        -修改多个
+4. db.(collection[集合名称]).replaceOne();
+        -替换一个
+
+删除：
+1. db.(collection[集合名称]).remove({匹配的内容},[boolen(默认为false，都删)]);
+2. db.().deleteOne();
+3. db.().deleteMany();
+4. db.().drop();
+        -删除集合
+5. db.dropDatabase();
+        -删除数据库

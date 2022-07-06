@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/exercise/fa/css/all.css">
+    <link rel="stylesheet" href="/exercise/css/reset.css">
+    <style>
+        .outer{
+            width: 1920px;
+            line-height: 30px;
+            background-color: rgb(227, 228, 229);
+            border-bottom:1px rgb(221, 221, 221) solid;
+        }
+        .inner{
+            width: 1180px;
+            height: 30px;
+            margin: 0 auto;
+        }
+        .location{  
+            float: left;      
+        }
+        .location_box{
+            height: 31px;
+            padding:0px 8px;
+            border: 1px rgb(227, 228, 229) solid;
+            border-bottom:1px rgb(221, 221, 221) solid;
+            box-sizing: border-box;
+            position: relative;
+            /* 注意 */
+        }
+        .map_marker{
+            color: red;
+        }
+        .location_box:hover{
+            background-color: #fff;
+            border: 1px rgb(221, 221, 221) solid;
+            border-bottom: none;
+            z-index: 200;
+        }
+        .location_menu{
+            width: 300px;
+            height: 400px;
+            border: 1px rgb(221, 221, 221) solid;
+            position: absolute;
+            top: 30px;
+            display:none;
+        }
+        .location:hover .location_menu{
+            display: block;
+        }
+        .function{
+            float: right;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .function_inner{   
+            height: 100%;
+            float: left;
+            padding:0 8px; 
+            box-sizing: border-box;
+            position: relative;       
+        }
+        .white{
+            border: 1px rgb(227, 228, 229) solid;
+        }
+        .white:hover{
+            background-color: #fff;
+            border: 1px rgb(221, 221, 221) solid;
+        }
+        .line{
+            height:10px;
+            width: 1px;
+            background-color: #ccc;
+            margin: 11px 5px;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #999;
+            font-size: 12px;
+        }
+        .red>a{
+            color: red;
+        }
+        a:hover{
+            color: red;
+        }
+        span{
+            color: #999;
+            font-size: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+            <div class="location">
+                <div class="location_box">
+                    <span class="map_marker fas">&#xf3c5</span>
+                    <a href="javascript:;">陕西</a>
+                </div>               
+                <div class="location_menu">
+                    123
+                </div>
+            </div>
+            <div class="function">
+                <div class="function_inner">
+                    <a href="javascript:;">你好，请登录</a>
+                </div>
+                <div class="function_inner red">
+                    <a href="javascript:;">免费注册</a>
+                </div>
+                <div class="line function_inner"></div>
+                <div class="function_inner">
+                    <a href="javascript:;">我的订单</a>
+                </div>
+                <div class="line function_inner"></div>
+                <div class="function_inner white">
+                    <a href="javascript:;">我的京东</a>
+                    <span class="fas">&#xf107</span>
+                </div>
+                <div class="line function_inner"></div>
+                <div class="function_inner">
+                    <a href="javascript:;">京东会员</a>
+                </div>
+                <div class="line function_inner"></div>
+                <div class="function_inner red white">
+                    <a href="javascript:;">企业采购</a>
+                    <span class="fas">&#xf107</span>
+                </div>
+                <div class="line function_inner"></div>
+                <div class="function_inner white">
+                    <a href="javascript:;">客户服务</a>
+                    <span class="fas">&#xf107</span>
+                </div>
+                <div class="line function_inner"></div>
+                <div class="function_inner white">
+                    <a href="javascript:;">网站导航</a>
+                    <span class="fas">&#xf107</span>
+                </div>
+                <div class="line function_inner"></div>
+                <div class="function_inner">
+                    <a href="javascript:;">手机京东</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

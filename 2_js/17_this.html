@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        // this属于它当前的对象
+        var name = 123;
+        function fun(){
+            console.log(this.name);
+        }
+        var obj = {
+            name: 456,
+            sayName: fun,
+            pname(){
+                console.log(this.name);
+            }
+        }
+        fun();
+        obj.pname();
+        obj.sayName();
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>

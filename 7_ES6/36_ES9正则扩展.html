@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ES6方法
+        /* let str = `<a href = "www.baidu.com">百度一下</a>`;
+        let reg = new RegExp(`<a href = "(.*)">(.*)<\/a>`,``);
+        // exec方法为：将匹配的地方返回一个数组
+        let result = reg.exec(str);    
+        console.log(result); */
+        // ES9扩展
+        /* let str = `<a href = "www.baidu.com">百度一下</a>`;
+        let reg = new RegExp(`<a href = "(?<location>.*)">(?<name>.*)<\/a>`,``);
+        let result = reg.exec(str);
+        console.log(result);
+        console.log(result.groups.location);
+        console.log(result.groups.name); */
+
+
+        let str1 = `js5211314你知道么555啦啦啦`;
+        // 正向断言（？=），后面是否有这个
+        // let reg = /\d+(?=啦)/;
+        // 反向断言（?<=）,前面是否有这个
+        let reg = /(?<=么)\d+/;
+        let result = reg.exec(str1);
+        console.log(result);
+
+        // .为匹配除换行符以外的所有单个字符
+    </script>
+</body>
+</html>

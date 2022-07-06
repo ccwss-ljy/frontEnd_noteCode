@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            var input = document.getElementsByTagName("input")[0];
+            // 键盘事件只能用在可以获取焦点的位置
+            // onkeydown为当键盘按下时触发
+            input.onkeydown = function(event){
+                // alert(window.event.keyCode);
+                // 使键盘无法输入字符，取消默认行为
+                // return false;
+                // if(window.event.keyCode >= 48 && window.event.keyCode <= 57){
+                //     return false;
+                // }
+                // ctrlKey、shiftKey、altKey分别代表按下这三个键位
+                if(window.event.keyCode == 48 && window.event.ctrlKey){
+                    alert(1);
+                }
+            }
+            // onkeyup为当键盘松开时触发
+        }
+    </script>
+</head>
+<body>
+    <input type="text">
+</body>
+</html>

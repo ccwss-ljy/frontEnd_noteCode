@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #request{
+            width: 500px;
+            height: 500px;
+            border:1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div id="request"></div>
+    <script>
+        let request = document.getElementById("request");
+        request.addEventListener("mouseenter", ()=>{
+            // 创建对象
+            const XHR = new XMLHttpRequest();
+            // 初始化XHR
+            XHR.open("POST", "http://127.0.0.1:8000/server");
+            // 设置请求头
+            XHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+            // 发送请求
+            // post在这里发送参数
+            XHR.send("a=100&b=200&c=300");
+            // 响应
+            XHR.onreadystatechange = function(){
+                if(XHR.readyState === 4){
+                    if(XHR.status >= 200 && XHR.status < 300){
+                        console.log(XHR.status);//响应行状态码
+                        console.log(XHR.statusText);//响应行状态码字符串
+                        console.log(XHR.getAllResponseHeaders());//响应头
+                        console.log(XHR.response);//响应体
+                        // 显示
+                        request.innerHTML = XHR.response;
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

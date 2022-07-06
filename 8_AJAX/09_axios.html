@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>GET</button>
+    <button>POST</button>
+    <button>axios</button>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let buttons = document.querySelectorAll("button");
+        buttons[0].onclick = function(){
+            axios.get("http://127.0.0.1:8000/axios-server", {
+                name: 11,
+                age: 22
+            }, {
+                // 请求行
+                params:{
+                    name: "haha"
+                },
+                // 请求头
+                headers:{
+                    a: 1000
+                }
+            }).then(value=>{
+                console.log(value);
+            });
+        }
+        buttons[1].onclick = function(){
+            axios.post("http://127.0.0.1:8000/axios-server", {
+                name: 123,
+                vip: 123
+            }, {
+                params: {
+                    name:132
+                },
+                headers:{
+                    weight: 200
+                }
+            });
+        }
+        buttons[2].onclick = function(){
+            console.log(3);
+        }
+    </script>
+</body>
+</html>

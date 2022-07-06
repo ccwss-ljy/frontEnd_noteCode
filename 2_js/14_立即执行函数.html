@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 普通函数
+        function sum(a, b){
+            var d = a + b;
+            return d;
+        }
+        var c = sum(2, 3);
+        console.log(c);
+        // 立即执行函数
+        (function(){
+            console.log("我是匿名函数");
+        })();
+
+        // 普通函数定义方法1
+        var obj = new Object();
+        function say(){
+            return true;
+        }
+        obj.xxx = say;
+        //方法2
+        obj.yyy = function(){
+            return false;
+        } 
+        console.log(obj.yyy);
+        console.log(obj.xxx);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            \w:
+                -匹配数字、字母、_
+            \W:
+                -除了数字、字母、_
+            \d:
+                -匹配数字
+            \D:
+                -除了数字
+            \s:
+                -匹配空格
+            \S: 
+                -除了空格
+            \b:
+                -保持边界(必须是一个单独的单词，不能和其他字母混子在一起)
+            \B:
+                -不保持边界
+        */ 
+        var str = "      child ren      ";
+        // 删除前后的空格
+        var reg = /^\s*|\s*$/g;
+        str = str.replace(reg, "");
+        console.log(str.length);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

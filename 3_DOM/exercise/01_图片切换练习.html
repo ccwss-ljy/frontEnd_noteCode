@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 500px;
+            height: 500px;
+            background-color: #bfa;
+            margin: 50px auto;
+            text-align: center;
+        }
+        img{
+            display: block;
+            width: 400px;
+            margin: 0 auto;
+        }
+        
+    </style>
+    <script>
+        window.onload = function(){
+            var imgArr = ["./图片/1.jpg", "./图片/2.jpg", "./图片/3.jpg", "./图片/4.jpg", "./图片/5.jpg", "./图片/6.jpg"]
+            var btn1 = document.getElementById("btn1");
+            var btn2 = document.getElementById("btn2");
+            var img = document.getElementsByTagName("img")[0];
+            var info = document.getElementById("info");
+            var index = 0;
+            btn1.onclick = function(){
+                index--;
+                if(index < 0){
+                    index = imgArr.length - 1;
+                }
+                img.src = imgArr[index];
+                info.innerHTML = "第" + (index+1) + "图片";
+            }
+            btn2.onclick = function(){
+                index++;
+                if(index == imgArr.length){
+                    index = 0;
+                }
+                img.src = imgArr[index];
+                info.innerHTML = "第" + (index+1) + "图片";
+            }
+            
+
+        }
+    </script>
+</head>
+<body>
+    <div class="box1">
+        <p id="info">第1图片</p>
+        <img src="./图片/1.jpg" alt="">
+        <button id="btn1">上一张</button>
+        <button id="btn2">下一张</button>
+    </div>
+</body>
+</html>

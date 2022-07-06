@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            正则表达式(定义方法一)：
+                -有两个参数：
+                    第一个参数为匹配的字符
+                    第二个参数规定匹配规则：
+                        -i：不区分大小写
+                        -g: 全局匹配模式
+                        -s: .空格也匹配
+        */ 
+        var str = "sfsdfswfBAdwdFAFF"
+        var reg = new RegExp("a", "i");
+        // test为测试函数，如果匹配成功就为true
+        console.log(reg.test(str));
+        /*
+            正则表达式(定义方法二)：
+                var reg = /a/i
+        */
+        var reg = /a/i;
+        var str = "sfsdfswfBAdwdFAFF"
+        console.log(reg.test(str));
+        /*
+            /a|b/i: 匹配a或b
+            /[ab]/i: 匹配a或b
+            [a-z]: a到z
+            [A-z]: 所有字母
+            [0-9]: 所有数字  
+            [^a]: 匹配除了a的字符 
+            a[bcd]v:匹配abv、acv、adv
+        */ 
+        var reg = /[^a]/;
+        console.log(reg.test("a"));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

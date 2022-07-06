@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #request{
+            width: 300px;
+            height: 300px;
+            border: 1px red solid;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn1">发送请求</button>
+    <div id="request"></div>
+    <script>
+        let btn1 = document.getElementById("btn1");
+        btn1.onclick = function(){
+            let x = new XMLHttpRequest();
+            x.open("GET", "http://127.0.0.1:8000/test-server");
+            x.send();
+            x.onreadystatechange = function(){
+                if(x.readyState === 4){
+                    if(x.status >= 200 && x.status < 300){
+                        request.innerHTML = x.response
+                    }
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = function(){
+            setTimeout(() => {
+                let data = "用户数据";
+                item.next(data);
+            }, 1000);
+        }
+        let order = function(){
+            setTimeout(() => {
+                let data = "财产数据";
+                item.next(data);
+            }, 1000);
+        }
+        let ddd = function(){
+            setTimeout(() => {
+                let data = "采集数据";
+                item.next(data);
+            }, 1000);
+        }
+        function * gen(){
+            let u = yield user();
+            console.log(u);
+            let o = yield order();
+            console.log(o);
+            let d = yield ddd();
+            console.log(d);
+        }
+        let item = gen();
+        item.next();
+    </script>
+</body>
+</html>
